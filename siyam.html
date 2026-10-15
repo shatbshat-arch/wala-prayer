@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مختصر في أحكام الصيام | الشيخ عبدالعزيز بن عبدالله الراجحي</title>
+<meta name="description" content="مختصر في أحكام الصيام - مستل من الإلمام بشيء من أحكام الصيام - تأليف الشيخ عبدالعزيز بن عبدالله الراجحي - موقع تفاعلي مرتب وسهل القراءة">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b4a3a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="أحكام الصيام">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+<style>
+:root{
+  --green:#0b4a3a; --green2:#147a5b; --green3:#e7f3ec;
+  --gold:#c19a1f; --gold2:#f2e2a8; --gold3:#fdf6dd;
+  --sand:#faf7ef; --ink:#1e2723; --muted:#687975;
+  --card:#ffffff; --radius:20px;
+  --shadow:0 14px 44px rgba(11,74,58,.12);
+  --quran:'Amiri Quran','Amiri',serif;
+  --ruqaa:'Aref Ruqaa','Amiri',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{font-family:'Cairo','Tajawal',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:2.05;font-size:17px}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,93%);margin-inline:auto}
+section{padding:52px 0}
+#readbar{position:fixed;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--green2));width:0;z-index:300}
+header{position:fixed;top:0;right:0;left:0;z-index:100;background:rgba(250,247,239,.93);backdrop-filter:blur(14px);border-bottom:1px solid #e6ddc6;transition:.3s}
+header.scrolled{background:rgba(11,74,58,.97);color:#fff}
+header.scrolled .nav-links a{color:#eee}
+header.scrolled .logo small{color:var(--gold2)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:11px 0;gap:12px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,var(--green),var(--green2));display:grid;place-items:center;color:var(--gold2);font-size:24px;box-shadow:var(--shadow);flex-shrink:0}
+.logo strong{font-size:17px;font-weight:900;display:block;line-height:1.3}
+.logo small{font-size:12px;color:var(--muted)}
+.nav-links{display:flex;gap:6px;font-weight:700;font-size:13.5px;flex-wrap:wrap}
+.nav-links a{padding:6px 11px;border-radius:999px;opacity:.92;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{background:var(--green);color:#fff}
+header.scrolled .nav-links a:hover,header.scrolled .nav-links a.active{background:var(--gold);color:#222}
+.hamburger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:inherit}
+.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:13px 26px;border-radius:999px;font-weight:800;border:none;cursor:pointer;transition:.25s;font-family:inherit;font-size:15.5px;box-shadow:0 8px 24px rgba(11,74,58,.25)}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#a8841c,var(--gold));color:#1d1d1d}
+.btn-light{background:#fff;color:var(--green);border:2px solid var(--green)}
+.btn-sm{padding:8px 16px;font-size:14px}
+/* hero */
+.hero{min-height:88vh;display:flex;align-items:center;padding:130px 0 60px;color:#fff;position:relative;background:linear-gradient(rgba(7,28,21,.82),rgba(7,28,21,.68)),url('https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1920&auto=format&fit=crop') center/cover}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(700px 350px at 75% 20%,rgba(193,154,31,.35),transparent)}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:700}
+.hero h1{font-family:var(--ruqaa);font-size:clamp(34px,5.5vw,60px);font-weight:700;line-height:1.6;margin:14px 0}
+.hero h1 span{color:var(--gold2)}
+.hero p{opacity:.93;max-width:600px;font-size:clamp(15px,2vw,18px)}
+.hero-btns{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,.97);color:#222;border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+.hero-card h3{color:var(--green);margin-bottom:6px}
+.quran-preview{font-family:var(--quran);font-size:24px;line-height:2.1;text-align:center;background:var(--gold3);border:2px solid var(--gold2);border-radius:16px;padding:14px;margin:12px 0;color:#2b2110}
+.hero-stats{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+.hstat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:10px 18px;min-width:125px;text-align:center}
+.hstat strong{font-size:24px;display:block;line-height:1.2}
+.hstat span{font-size:13px;opacity:.88}
+/* toolbar */
+.toolbar{position:sticky;top:76px;z-index:50;background:#fff;border:1px solid #e8dfc7;border-radius:16px;box-shadow:var(--shadow);padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:-30px}
+.toolbar input[type=search]{flex:1;min-width:200px;padding:11px 16px;border-radius:12px;border:1.5px solid #e3dcc4;font-family:inherit;font-size:15px}
+.toolbar input:focus{outline:none;border-color:var(--green2)}
+.chip{background:var(--green3);color:var(--green);border:none;padding:9px 15px;border-radius:999px;font-weight:800;font-family:inherit;cursor:pointer;font-size:14px}
+.chip.on{background:var(--green);color:#fff}
+/* sections */
+.sec-head{text-align:center;max-width:760px;margin:0 auto 30px}
+.kicker{display:inline-block;background:var(--green3);color:var(--green2);padding:6px 18px;border-radius:999px;font-weight:800;font-size:14px;margin-bottom:12px}
+.sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:900;line-height:1.6}
+.sec-head h2 span{color:var(--green2)}
+.sec-head p{color:var(--muted);margin-top:8px}
+.page-tag{display:inline-block;background:#fff;border:1px dashed var(--gold);color:#7a6410;font-size:13px;font-weight:700;padding:3px 12px;border-radius:999px;margin-top:8px}
+.chapter{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #eee3c6;overflow:hidden;margin-bottom:26px}
+.ch-head{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:20px 26px;display:flex;align-items:center;gap:16px}
+.ch-num{width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.35);display:grid;place-items:center;font-size:24px;font-weight:900;flex-shrink:0}
+.ch-head h2{font-size:clamp(20px,3vw,27px);font-weight:900;line-height:1.5}
+.ch-head small{opacity:.85;font-size:13.5px;font-weight:400}
+.ch-body{padding:26px 28px}
+.ch-body p{margin-bottom:12px}
+.ch-body h3.item{color:var(--green);font-size:19px;margin:20px 0 8px;padding-right:12px;border-right:4px solid var(--gold)}
+.ch-body h3.item:first-child{margin-top:0}
+.ayah{font-family:var(--quran);font-size:24px;line-height:2.1;text-align:center;background:var(--gold3);border:2px solid var(--gold2);border-radius:14px;padding:14px 18px;margin:14px 0;color:#2b2110}
+.hadith{background:#f3faf6;border:1.5px solid #bfe0d1;border-right:6px solid var(--green2);border-radius:14px;padding:14px 18px;margin:14px 0}
+.hadith strong{color:var(--green)}
+.rule{border-right:5px solid var(--gold);background:var(--gold3);padding:12px 18px;border-radius:14px;margin:12px 0;font-weight:600}
+.rule.green{border-color:var(--green2);background:var(--green3)}
+.note{background:#f8f6ef;border:1px dashed #cbb96f;border-radius:14px;padding:12px 18px;margin:12px 0;font-size:15.5px;color:#5a4a12}
+ol.points,ul.points{margin:10px 18px 10px 0}
+ol.points li,ul.points li{margin-bottom:8px}
+details.takhrij{margin-top:14px;background:#fbfaf6;border:1px solid #e7dfc4;border-radius:12px;padding:10px 16px;font-size:14.5px;color:#5b5b5b}
+details.takhrij summary{cursor:pointer;font-weight:800;color:var(--green)}
+.toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.toc-grid a{background:#fff;border:1px solid #eee3c6;padding:13px 18px;border-radius:14px;font-weight:800;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 14px rgba(0,0,0,.05);transition:.2s}
+.toc-grid a:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
+.toc-grid a span.num{background:var(--green3);color:var(--green);width:32px;height:32px;border-radius:50%;display:inline-grid;place-items:center;font-size:14px;flex-shrink:0}
+.toc-grid a small{font-size:12.5px;opacity:.7}
+footer{background:#081e15;color:#cbd8d2;margin-top:60px;padding:50px 0 20px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+footer h4{color:#fff;margin-bottom:12px}
+footer a{display:block;padding:4px 0;opacity:.85;font-size:14.5px}
+footer a:hover{color:var(--gold2)}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:14px;text-align:center;font-size:13.5px;opacity:.7}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+.float-top{position:fixed;bottom:20px;left:20px;z-index:150;background:var(--green);color:#fff;border:none;width:52px;height:52px;border-radius:50%;font-size:20px;cursor:pointer;box-shadow:var(--shadow);display:none}
+mark{background:var(--gold2);padding:0 4px;border-radius:4px}
+.night body,.dark{background:#101715 !important;color:#e8eceb !important}
+body.dark{background:#101715;color:#e8eceb}
+body.dark .chapter,body.dark .toolbar,body.dark .hero-card,body.dark .toc-grid a{background:#1a2421;border-color:#2c3a35;color:#e8eceb}
+body.dark .ch-body,body.dark .ayah{color:#e8eceb}
+body.dark .ayah{background:#232d2a;border-color:#3a4a44;color:#f2e2a8}
+body.dark .hadith{background:#16211d;border-color:#2c4a3e}
+body.dark .rule{background:#232d2a;border-color:var(--gold)}
+body.dark details.takhrij{background:#1a2421;color:#bbb}
+@media(max-width:980px){.hero-inner{grid-template-columns:1fr}.toc-grid{grid-template-columns:1fr}.toolbar{top:70px}.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+section{padding:40px 0}
+.nav-links{position:fixed;top:74px;right:12px;left:12px;background:#fff;color:#222;flex-direction:column;padding:18px;border-radius:18px;box-shadow:var(--shadow);display:none;gap:6px;max-height:70vh;overflow:auto;z-index:120}
+.nav-links.open{display:flex}
+header.scrolled .nav-links a{color:#222}
+.hamburger{display:block}
+.nav .btn-dl{display:none}
+.ch-body{padding:20px 18px}
+.f-grid{grid-template-columns:1fr}
+}
+@media print{.toolbar,header,.hero-btns,.float-top,footer{display:none}body{background:#fff;font-size:14px}section{padding:16px 0}.chapter,.ch-body{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<div id="readbar"></div>
+
+<header id="header">
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-moon"></i></div>
+      <div><strong>مختصر في أحكام الصيام</strong><small>الشيخ عبدالعزيز بن عبدالله الراجحي • (26)</small></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#muqaddima">المقدمة</a>
+      <a href="#wujub">وجوب الصوم</a>
+      <a href="#muftirat">المفطرات</a>
+      <a href="#marid">المريض والمسافر</a>
+      <a href="#futur">الفطور والسحور</a>
+      <a href="#rukhas">الرخص</a>
+      <a href="#adab">آداب الصائم</a>
+      <a href="#dam">الدم الخارج</a>
+      <a href="#fihris">الفهرس</a>
+      <a href="quiz.html" style="background:var(--gold);color:#222">📝 الاختبار</a>
+    </nav>
+    <a href="quiz.html" class="btn btn-sm btn-dl btn-gold"><i class="fa-solid fa-clipboard-question"></i> اختبر نفسك</a>
+    <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div>
+      <span class="badge"><i class="fa-solid fa-star"></i> مجموعة مؤلفات فضيلة الشيخ (26) • الطبعة الثالثة 1444هـ - 2023م</span>
+      <h1>مُخْتَصَرٌ<br><span>في أحكام الصيام</span></h1>
+      <p>مستلٌّ من رسالة «الإلمام بشيء من أحكام الصيام» — جملة مما في الأصل من الأحكام، جُعلت تحت موضوعات تُقرّب المعاني إلى القارئ. موقع مرتب وسهل القراءة يعرض الكتاب كاملاً بأدلته من الكتاب والسنة.</p>
+      <div class="hero-btns">
+        <a href="#muqaddima" class="btn btn-gold">ابدأ القراءة <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="quiz.html" class="btn" style="background:#fff;color:var(--green)"><i class="fa-solid fa-clipboard-question"></i> اختبار أحكام الصيام</a>
+        <a href="#fihris" class="btn btn-light" style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff">فهرس الموضوعات</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><strong>11</strong><span>باباً مرتباً</span></div>
+        <div class="hstat"><strong>37</strong><span>صفحة في الأصل</span></div>
+        <div class="hstat"><strong>ﷺ</strong><span>أدلة من الصحيحين</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3><i class="fa-solid fa-user-tie"></i> تأليف</h3>
+      <div style="font-size:22px;font-weight:900;color:var(--green)">عبدالعزيز بن عبدالله الراجحي</div>
+      <div class="quran-preview">﴿ فَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ ﴾<br><small style="font-family:'Cairo';font-size:13px">[البقرة: 185]</small></div>
+      <p style="font-size:14.5px;color:var(--muted)">تم الصف والإخراج في مؤسسة عبدالعزيز الراجحي الوقفية. كل الحقوق محفوظة — الطبعة الثالثة.</p>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <a href="#wujub" class="btn btn-sm">بم يجب صوم رمضان؟</a>
+        <a href="#muftirat" class="btn btn-sm btn-gold">مفطرات الصيام</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="🔍 ابحث في الكتاب... مثال: الحجامة، السحور، القبلة، النية">
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="chip" onclick="changeFont(1)">تكبير الخط A+</button>
+      <button class="chip" onclick="changeFont(-1)">تصغير A-</button>
+      <button class="chip" onclick="toggleDark()">🌙 ليلي</button>
+      <button class="chip on" onclick="window.print()"><i class="fa-solid fa-print"></i> طباعة</button>
+    </div>
+  </div>
+  <div id="searchInfo" style="margin-top:10px;font-size:14px;color:var(--muted)"></div>
+</div>
+
+<section id="muqaddima" style="padding-top:50px">
+  <div class="container">
+    <div class="chapter reveal searchable">
+      <div class="ch-head"><div class="ch-num"><i class="fa-solid fa-book-open"></i></div><div><h2>المقدمة</h2><small>صفحة 5 من الأصل • كتبه عبدالعزيز بن عبدالله الراجحي</small></div></div>
+      <div class="ch-body">
+        <p>الحمد لله والصلاة والسلام على رسول الله وآله وصحبه ومن تبعهم بإحسان إلى يوم الدين، <strong>أما بعد:</strong></p>
+        <p>فهذا <strong>«مختصر في أحكام الصيام»</strong>، مستلٌّ من رسالة: «الإلمام بشيء من أحكام الصيام» رأيت الحاجة داعية إلى ذلك، وهو يحتوي على جملة مما في الأصل من الأحكام، وجُعلت تحت موضوعات تُقرّب المعاني إلى القارئ.</p>
+        <p>وأسأل الله أن ينفع بها، وأن يرزقنا جميعاً العلم النافع والعمل الصالح، وأن يُثبّت الجميع على الهدى، إنه وليُّ ذلك والقادر عليه.</p>
+        <p>وصلى الله وسلم على نبينا محمد وآله وصحبه أجمعين.</p>
+        <div class="rule green">💡 منهج الكتاب: أحكام مختصرة محررة بالدليل من الكتاب والسنة الصحيحة، مرتبة على موضوعات: الوجوب، ما قبل الصيام، المفطرات، أحوال المريض والمسافر، الفطور والسحور، الرخص، النوم، ما يجب اجتنابه، ما يُشرع، وأحكام الدم.</div>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="wujub">
+      <div class="ch-head"><div class="ch-num">1</div><div><h2>بم يجب صوم رمضان؟</h2><small>صفحات 7 - 9 • الرؤية وإكمال العدة • إبطال الحساب</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">يجب صوم رمضان بأحد أمرين لا ثالث لهما</h3>
+        <ul class="points">
+          <li><strong>أحدهما:</strong> رؤية هلال رمضان.</li>
+          <li><strong>الثاني:</strong> إكمال شعبان ثلاثين يوماً.</li>
+        </ul>
+        <h3 class="item">ويجب الفطر من رمضان بأحد أمرين لا ثالث لهما</h3>
+        <ul class="points">
+          <li><strong>أحدهما:</strong> رؤية هلال شوال إذا ثبت بشهادة عدلين.</li>
+          <li><strong>الثاني:</strong> إكمال رمضان ثلاثين يوماً.</li>
+        </ul>
+        <div class="hadith">ثبت في الصحيحين من حديث عبدالله بن عمر رضي الله عنهما أن رسول الله ﷺ ذكر رمضان فقال: <strong>«لا تصوموا حتى تروا الهلال، ولا تفطروا حتى تروه، فإن غُمّ عليكم فاقدروا له»</strong>. وفي لفظ للبخاري: <strong>«الشهر تسع وعشرون ليلة، فلا تصوموا حتى تروه، فإن غُمّ عليكم فأكملوا العدة ثلاثين»</strong>. وفي حديث أبي هريرة عند مسلم: <strong>«فإن غُمّي عليكم الشهر فعُدّوا ثلاثين»</strong>.</div>
+        <p>وجمهور أهل العلم على أن المراد بقوله: «فاقدروا له»: انظروا في أول الشهر واحسبوا تمام الثلاثين، ويرجّح هذا التأويلَ الرواياتُ المصرّحة بالمراد.</p>
+        <h3 class="item">النهي عن صوم يوم الشك</h3>
+        <div class="hadith">قال ﷺ: <strong>«لا يتقدّمنّ أحدكم رمضان بصوم يوم أو يومين، إلا أن يكون رجل كان يصوم صومه، فليصم ذلك اليوم»</strong>. وقال عمار رضي الله عنه: <strong>«من صام يوم الشك فقد عصى أبا القاسم ﷺ»</strong> (علّقه البخاري مجزوماً به وهو موصول في السنن).</div>
+        <h3 class="item">إبطال الاعتماد على الحساب في دخول الشهر</h3>
+        <div class="hadith">قال ﷺ: <strong>«إنا أمة أمية، لا نكتب ولا نحسب، الشهر هكذا وهكذا»</strong> يعني: مرة تسعة وعشرين، ومرة ثلاثين.</div>
+        <p>وهذا الحديث دليل على إبطال الاعتماد على الحساب في دخول الشهر وخروجه، وإنما يُعتمد على <strong>الرؤية أو إكمال العدة ثلاثين</strong>؛ لأن النبي ﷺ علّق الحكم بالرؤية لا بالحساب، والرؤية يدركها الخاص والعام والجاهل والعالم، وهذا يدل على يُسر الشريعة وسماحتها، فلله الحمد على ما يسّر وسهّل، وله الحكمة التامة فيما يشرعه لعباده لما يعلمه سبحانه لهم من المصلحة والرحمة، وهو الحكيم العليم سبحانه وبحمده.</p>
+        <details class="takhrij"><summary>📚 تخريج الأحاديث</summary>
+        حديث ابن عمر: البخاري (1906) ومسلم (1080)؛ لفظ «الشهر تسع وعشرون»: البخاري (1907)؛ حديث أبي هريرة «فعدوا ثلاثين»: مسلم (1081)؛ حديث «لا يتقدمن»: البخاري (1914) ومسلم (1082)؛ حديث عمار معلقاً: البخاري (27/3)؛ حديث «إنا أمة أمية»: البخاري (1913) ومسلم (1080).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="qabl">
+      <div class="ch-head"><div class="ch-num">2</div><div><h2>أحكام الصيام قبل حلوله</h2><small>صفحات 10 - 11 • النية • الاحتياط المنهي عنه</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">1 - يحرم الصيام قبل رمضان بيوم أو يومين بقصد الاحتياط</h3>
+        <p>لكن من وافق عادةً له بصيام أيام يصومها لا يقصد الاحتياط فلا بأس، كمن يصوم الاثنين والخميس فوافق آخر الشهر، وكمن يصوم صوماً واجباً: كنذر أو كفارة أو قضاء رمضان السابق؛ لحديث أبي هريرة المتقدم وحديث عمار في يوم الشك.</p>
+        <h3 class="item">2 - لا يصح صوم الفرض إلا بنية من الليل</h3>
+        <div class="hadith">ثبت عنه ﷺ أنه قال: <strong>«من لم يُجمِع الصيام قبل الفجر فلا صيام له»</strong>، وفي لفظ: <strong>«من لم يُبيِّت الصيام قبل الفجر»</strong>، وفي لفظ: <strong>«من لم يُبيِّت الصيام من الليل»</strong>. ولحديث عمر في الصحيحين: <strong>«إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى»</strong>.</div>
+        <h3 class="item">3 - وبالنية أيضاً يفسد الصيام</h3>
+        <p>فمن نوى الإفطار من صومه أفطر وفسد صومه في أصح قولي العلماء؛ لأن الصوم عبادة من شرطها النية في جميع أجزاء العبادة، فإذا نوى قطعها فسدت العبادة بنية الخروج منها وزالت حقيقتها وحكمها؛ ففسد الصوم لزوال شرطه لما تقدم: «إنما الأعمال بالنيات...» فبناء الأعمال على النيات والأعمال معتبرة بها وهي المصححة لها فمدارها عليها.</p>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        حديث التبييت: أبو داود (2454)، النسائي (2331) و(2334)؛ حديث «إنما الأعمال»: البخاري بدء الوحي (1) ومسلم الإمارة (1907).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="muftirat">
+      <div class="ch-head"><div class="ch-num">3</div><div><h2>مفطرات الصيام</h2><small>صفحات 12 - 16 • ستة مفطرات مفصلة</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">1 - الأكل والشرب بعد تبين الفجر الثاني</h3>
+        <p>فمن أكل أو شرب مختاراً ذاكراً لصومه من غير عذر فسد صومه وعليه الوعيد الشديد، وعليه قضاء ذلك اليوم مع التوبة الصادقة والندم والإقلاع.</p>
+        <div class="ayah">﴿ وَكُلُوا وَاشْرَبُوا حَتَّىٰ يَتَبَيَّنَ لَكُمُ الْخَيْطُ الْأَبْيَضُ مِنَ الْخَيْطِ الْأَسْوَدِ مِنَ الْفَجْرِ ثُمَّ أَتِمُّوا الصِّيَامَ إِلَى اللَّيْلِ ﴾ [البقرة: 187]</div>
+        <h3 class="item">2 - الجماع في نهار رمضان</h3>
+        <p>من جامع أهله في نهار رمضان وهو صائم بطل صومه إذا كان عامداً عالماً، ويجب عليه قضاء ذلك اليوم والتوبة النصوح، وتجب عليه مع ذلك <strong>الكفارة:</strong> عتق رقبة، فإن لم يجد صام شهرين متتابعين، فإن لم يستطع أطعم ستين مسكيناً.</p>
+        <div class="hadith">حديث أبي هريرة: بينما نحن جلوس عند النبي ﷺ إذ جاءه رجل فقال: يا رسول الله هلكت... قال: وقعت على امرأتي وأنا صائم (وفي لفظ: في رمضان). فقال: <strong>«هل تجد رقبة تعتقها؟»</strong> قال: لا. قال: <strong>«فهل تستطيع أن تصوم شهرين متتابعين؟»</strong> قال: لا. قال: <strong>«فهل تجد إطعام ستين مسكيناً؟»</strong> قال: لا... فأُتي النبي ﷺ بعَرَق فيه تمر فقال: «خذها فتصدق به»... فقال: أعلى أفقر مني؟... فضحك النبي ﷺ ثم قال: <strong>«أطعمه أهلك»</strong>. وفي حديث عائشة في صحيح مسلم: «احترقت».</div>
+        <div class="rule green">دليل على أن الجماع في نهار رمضان من الصائم المكلف المقيم الصحيح المتعمد المتذكر كبيرة من كبائر الذنوب؛ لإقرار النبي ﷺ للرجل على قوله «هلكت». وأما من جامع ناسياً فصومه صحيح في أصح القولين ولا قضاء ولا كفارة.</div>
+        <h3 class="item">3 - ما في معنى الأكل والشرب</h3>
+        <p>كالإبر المغذية؛ لأنه يُستغنى بها عن الطعام، وكذا <strong>حقن الدم</strong> يفطر به الصائم لأن الدم خلاصة الطعام والشراب. لكن الغالب فيمن يحتاج إليها أنه مريض يُباح له الفطر أصلاً.</p>
+        <div class="note">أما الإبر المكافحة للمرض (في الوريد أو العضل) فلا يفطر بها الصائم لأنها ليست أكلاً ولا شرباً ولا في معناهما، لكن الاحتياط تأخيرها إلى الليل.</div>
+        <h3 class="item">4 - شمّ البخور عالماً عامداً</h3>
+        <p>يفطر به الصائم وهو قول كثير من الفقهاء لأن له نفوذاً إلى الدماغ. أما إذا دخل أنفه أو شمّه من غير قصد فلا يفطر لعدم الإرادة والاختيار.</p>
+        <h3 class="item">5 - إخراج الدم بالحجامة</h3>
+        <div class="hadith">قال ﷺ: <strong>«أفطر الحاجم والمحجوم»</strong> — رواه أبو داود عن ثوبان، ورواه عن شداد بن أوس: أن رسول الله ﷺ أتى على رجل بالبقيع وهو يحتجم لثمان عشرة خلت من رمضان فقال: «أفطر الحاجم والمحجوم». وفي الباب عن جمع من الصحابة.</div>
+        <p>وإلى القول بأن الحجامة تُفطّر ذهب طائفة من أهل العلم: كأحمد بن حنبل وإسحاق بن راهويه وأبي ثور وعطاء وعبدالرحمن بن مهدي والأوزاعي والحسن وابن سيرين، وهو اختيار شيخ الإسلام ابن تيمية وتلميذه ابن القيم رحمهما الله. وذهب الجمهور إلى عدم الفطر بالحجامة مطلقاً، وهو مذهب مالك والشافعي وأبي حنيفة.</p>
+        <h3 class="item">6 - القيء عمداً</h3>
+        <div class="hadith">قال ﷺ: <strong>«من ذرعه القيء فليس عليه قضاء، ومن استقاء عمداً فليقض»</strong>. وقال ابن المنذر: أجمع أهل العلم على إبطال صوم من استقاء عامداً. أما من ذرعه القيء وغلبه فلا يفطر.</div>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        حديث الجماع: البخاري (1936) ومسلم تحريم الجماع في نهار رمضان (1111) و(1112)؛ حديث «أفطر الحاجم»: أبو داود (2367) وابن ماجه (1680)، وحديث شداد: أبو داود (2399) وصححه أحمد وإسحاق والبخاري وعلي بن المديني؛ حديث القيء: أبو داود (2380) والترمذي (720) وابن ماجه (1676) وصححه ابن خزيمة وابن حبان والحاكم؛ الإجماع: ابن المنذر (49/126).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="marid">
+      <div class="ch-head"><div class="ch-num">4</div><div><h2>من أحكام الصيام للمريض والمسافر</h2><small>صفحات 17 - 18</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">1 - المسافر يجوز له الفطر ثم يقضي</h3>
+        <div class="ayah">﴿ فَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ ۖ وَمَن كَانَ مَرِيضًا أَوْ عَلَىٰ سَفَرٍ فَعِدَّةٌ مِّنْ أَيَّامٍ أُخَرَ ﴾ [البقرة: 185]</div>
+        <h3 class="item">2 - المسافر الصائم مُخيَّر بين الصيام والإفطار مع القضاء</h3>
+        <div class="hadith">حديث عائشة: أن حمزة بن عمرو الأسلمي قال للنبي ﷺ: أأصوم في السفر؟ وكان كثير الصيام. فقال: <strong>«إن شئت فصم، وإن شئت فأفطر»</strong>.</div>
+        <p>واختلف العلماء أيهما أفضل: فقيل الفطر أفضل لأخذه برخصة الله، وقيل الصوم أفضل <strong>لإبراء الذمة، وهذا الصحيح والله أعلم.</strong></p>
+        <h3 class="item">3 - المريض يجوز له الفطر ويقضي، ومثله الحامل والمرضع</h3>
+        <div class="ayah">﴿ فَمَن كَانَ مِنكُم مَّرِيضًا أَوْ عَلَىٰ سَفَرٍ فَعِدَّةٌ مِّنْ أَيَّامٍ أُخَرَ ﴾ [البقرة: 184]</div>
+        <p>وكذا الحامل والمرضع إذا خافتا على نفسيهما أو على ولديهما تفطران وتقضيان لأنهما في حكم المريض.</p>
+        <div class="rule">المرض المبيح للفطر هو: <strong>الشديد الذي يزيد بالصوم أو يُخشى تباطؤ برئه</strong>. وأجمع أهل العلم على إباحة الفطر للمريض في الجملة لقوله تعالى ﴿وَمَا جَعَلَ عَلَيْكُمْ فِي الدِّينِ مِنْ حَرَجٍ﴾ [الحج: 78]. بخلاف المرض الخفيف الذي لا أثر للصوم فيه فلا يُبيح الفطر، ويجب عليه الصوم لعموم ﴿فَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ﴾.</div>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        حديث التخيير: البخاري (1943) ومسلم (1121)؛ ضابط المرض: المغني لابن قدامة (155/3).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="futur">
+      <div class="ch-head"><div class="ch-num">5</div><div><h2>من أحكام الصيام في الفطور والسحور</h2><small>صفحات 19 - 21</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">1 - استحباب تعجيل الفطر إذا تحقق الغروب</h3>
+        <p>بالرؤية أو بإخبار ثقة عدل.</p>
+        <div class="hadith">قال ﷺ: <strong>«لا يزال الناس بخير ما عجّلوا الفطر»</strong>. وذلك لأن التعجيل يدل على الامتثال، وتأخيره يدل على الغلو كما يفعله اليهود والنصارى وكما تفعله بعض الطوائف المنحرفة بتأخيره إلى ظهور النجوم. وفي سنن أبي داود: <strong>«لأن اليهود والنصارى يؤخرون»</strong>. وروى ابن حبان والحاكم من حديث سهل بلفظ: <strong>«لا تزال أمتي على سنتي ما لم تنتظر بفطرها النجوم»</strong>.</div>
+        <h3 class="item">2 - استحباب السحور</h3>
+        <div class="ayah">﴿ وَكُلُوا وَاشْرَبُوا حَتَّىٰ يَتَبَيَّنَ لَكُمُ الْخَيْطُ الْأَبْيَضُ مِنَ الْخَيْطِ الْأَسْوَدِ مِنَ الْفَجْرِ ﴾ [البقرة: 187]</div>
+        <div class="hadith">كان لرسول الله ﷺ مؤذنان: بلال وابن أم مكتوم الأعمى، فقال: <strong>«إن بلالاً يؤذن بليل، فكلوا واشربوا حتى ينادي ابن أم مكتوم»</strong> — ولم يكن بينهما إلا أن ينزل هذا ويرقى هذا. وقال ﷺ: <strong>«تسحّروا فإن في السحور بركة»</strong>.</div>
+        <h3 class="item">3 - استحباب تأخير السحور</h3>
+        <div class="hadith">عن زيد بن ثابت قال: تسحّرنا مع النبي ﷺ ثم قام إلى الصلاة، قلت: كم كان بين الأذان والسحور؟ قال: <strong>«قدر خمسين آية»</strong>.</div>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        حديث التعجيل: البخاري (1957) ومسلم (1098)؛ حديث التأخير: أبو داود (2353)؛ حديث «على سنتي»: ابن حبان (3510) والحاكم (1584)؛ حديث المؤذنين: البخاري (617) ومسلم (1092)؛ حديث «تسحروا»: البخاري (1923) ومسلم (1095)؛ حديث التأخير: البخاري (1921) ومسلم (1097).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="rukhas">
+      <div class="ch-head"><div class="ch-num">6</div><div><h2>من الرخص في الصيام</h2><small>صفحات 22 - 26 • ثماني رخص</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">1 - من أكل أو شرب ناسياً فصومه صحيح ولا قضاء عليه</h3>
+        <div class="hadith">قال ﷺ: <strong>«إذا نسي فأكل وشرب فليتمّ صومه، فإنما أطعمه الله وسقاه»</strong>. وهو الصواب الذي ذهب إليه جمهور العلماء.</div>
+        <h3 class="item">2 - من دخل الماء حلقه بلا قصد، أو طار إليه ذباب أو غبار</h3>
+        <p>كمن اغتسل أو تمضمض أو استنشق فدخل الماء حلقه بلا قصد لم يفسد صومه، وكذا الغبار والدقيق ونحوه؛ لعدم إمكان التحرز ولأنه لا قصد ولا إرادة ولا اختيار.</p>
+        <div class="ayah">﴿ لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ﴾ [البقرة: 286]</div>
+        <h3 class="item">3 - يجوز للصائم أن يغتسل من الجنابة</h3>
+        <div class="hadith">قالت عائشة: كان النبي ﷺ <strong>«يدركه الفجر وهو جُنُب من أهله ثم يغتسل ويصوم»</strong>.</div>
+        <h3 class="item">4 - يجوز أن يصب على رأسه الماء للتبرد ويتمضمض</h3>
+        <div class="hadith">«لقد رأيت رسول الله ﷺ بالعَرْج يصبّ على رأسه الماء وهو صائم من العطش أو من الحر» (أبو داود).</div>
+        <h3 class="item">5 - من أكل شاكّاً في طلوع الفجر صح صومه، وفي غروب الشمس يقضي</h3>
+        <p>من أكل أو شرب شاكّاً في طلوع الفجر ولم يتبين له طلوعه صح صومه ولا قضاء عليه لقوله تعالى ﴿حتى يتبين لكم...﴾. أما من أكل شاكّاً في غروب الشمس ولم يتبين الغروب ولم يغلب على ظنه فعليه القضاء لأن الأصل بقاء النهار.</p>
+        <h3 class="item">6 - يجوز للصائم أن يُقبّل زوجته ويباشرها ما لم يَخْشَ نزول شيء</h3>
+        <div class="hadith">قالت عائشة: كان النبي ﷺ <strong>«يُقبّل ويباشر وهو صائم، وكان أملككم لإربه»</strong>. وفي الصحيح: «إن كان رسول الله ﷺ ليُقبّل بعض أزواجه وهو صائم» ثم ضحكت. وفي مسلم عن حفصة: «كان النبي ﷺ يُقبّل وهو صائم». وعن أم سلمة: «كان يُقبّلها وهو صائم».</div>
+        <p>فهذه الأحاديث تدل على جواز التقبيل والمباشرة وصحة الصوم ما لم يخش من المباشرة أو القبلة خروج شيء من المني أو المذي لكونه سريع الإنزال؛ فإن خشي وجب عليه ترك المباشرة والقبلة لقول عائشة «وكان أملككم لإربه»، ولأن حفظ الصيام عن الإفساد واجب وما لا يتم الواجب إلا به فهو واجب.</p>
+        <div class="rule">فإن قبّل الصائم أو باشر فخرج منه منيّ فسد صومه، وكذا لو كرّر النظر فأنزل، وكذا لو استمنى فأمنى فسد صومه وعليه القضاء ولا كفارة (فالكفارة في الجماع خاصة). أما من فكّر فأنزل أو أنزل من نظرة واحدة بلا تعمّد ولا تكرار فلا يفسد صومه لأنه لا اختيار له.</div>
+        <h3 class="item">7 - الشيخ الكبير والمرأة الكبيرة والمريض الذي لا يُرجى برؤه</h3>
+        <p>يُفطرون ويُطعم كل واحد مكان كل يوم مسكيناً، إذا كانوا لا يُطيقون الصوم في قول جمهور العلماء، قالوا: وإن كانت الآية منسوخة وهي ﴿وَعَلَى الَّذِينَ يُطِيقُونَهُ فِدْيَةٌ طَعَامُ مِسْكِينٍ﴾ [البقرة: 184] إلا أن حكم الإطعام باقٍ على من لم يُطق الصوم لكبر أو مرض لا يُرجى برؤه.</p>
+        <h3 class="item">8 - يُستحب للولي أن يصوم عن الميت ويصح ويبرأ به الميت</h3>
+        <div class="hadith">قال ﷺ: <strong>«من مات وعليه صيام صام عنه وليّه»</strong>. وإن شاء أطعم عنه عن كل يوم مسكيناً، فالولي مُخيّر بين الصيام والإطعام.</div>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        حديث النسيان: البخاري (1933) ومسلم (1155)؛ حديث الجنابة: البخاري (1926) ومسلم (1109)؛ حديث صب الماء: أبو داود (2365)؛ أحاديث القبلة: البخاري (1927) ومسلم (1106)، والبخاري (1928) ومسلم (1107)، والبخاري (1929)؛ حديث «من مات»: البخاري (1952) ومسلم (1147).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="nawm">
+      <div class="ch-head"><div class="ch-num">7</div><div><h2>من أحكام نوم الصائم</h2><small>صفحات 27 - 28</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">1 - من نام جميع النهار صح صومه، ومن أُغمي عليه جميع النهار قضى</h3>
+        <p>لأن النوم لا يزول به الإحساس، ومن أُغمي عليه جميع النهار فإنه يقضي لأنه مكلف والإغماء يزول به الإحساس بالكلية فلا بد له من نية؛ لعموم قوله ﷺ: «إنما الأعمال بالنيات...» متفق عليه.</p>
+        <h3 class="item">2 - من احتلم في نهار الصيام فيغتسل وصومه صحيح</h3>
+        <p>ولا يضره ذلك لأنه ليس له اختيار ولا إرادة، وقد قال الله تعالى ﴿لا يكلف الله نفساً إلا وسعها﴾.</p>
+        <h3 class="item">3 - من أصبح جُنُباً فصومه صحيح إذا أمسك بنية قبل الفجر</h3>
+        <p>بأن طلع عليه الفجر وهو جنب من جماع أو احتلام ولو لم يغتسل إلا بعد الفجر، لما ثبت في الصحيحين من حديث عائشة وأم سلمة: «يدركه الفجر وهو جنب من أهله ثم يغتسل ويصوم». وعن عائشة: «يدركه الفجر في رمضان من غير حُلم فيغتسل ويصوم». وهو الصواب الذي عليه جمهور العلماء، ثم استقر الإجماع عليه.</p>
+        <h3 class="item">4 - وكذا الحائض والنفساء إذا انقطع دمها ولم تغتسل إلا بعد الفجر صح صومها</h3>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        حديث الجنابة سبق؛ حديث «من غير حلم»: البخاري (1930)؛ انظر فتح الباري (147/4) وشرح النووي على مسلم باب صحة صوم من طلع عليه الفجر وهو جنب (7/222).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="adab">
+      <div class="ch-head"><div class="ch-num">8</div><div><h2>مما يجب على الصائم اجتنابه • ومما يُشرع له</h2><small>صفحات 29 - 33</small></div></div>
+      <div class="ch-body">
+        <h3 class="item">أولاً: مما يجب اجتنابه — 1 - الرفث والجهل وقول الزور</h3>
+        <p>فيحرم على الصائم: الرفث (الكلام الفاحش والجماع ومقدماته)، والصخب والجهل، وقول الزور والعمل به والسباب. فإن سابّه أحد أو قاتله فليقل إني صائم ولا يقابله بالمثل.</p>
+        <div class="hadith">قال ﷺ: <strong>«الصيام جُنّة، وإذا كان يوم صوم أحدكم فلا يرفث ولا يصخب، فإن سابّه أحد أو قاتله فليقل إني امرؤ صائم»</strong>. وفي لفظ: <strong>«الصيام جنة فلا يرفث ولا يجهل، وإن امرؤ قاتله أو شاتمه فليقل إني صائم مرتين»</strong>. وقال ﷺ: <strong>«من لم يدع قول الزور والعمل به فليس لله حاجة في أن يدع طعامه وشرابه»</strong>، وفي لفظ: «... والعمل به والجهل...».</div>
+        <h3 class="item">2 - ليس للصائم أن يبالغ في الاستنشاق</h3>
+        <div class="hadith">قال النبي ﷺ للقيط: <strong>«وبالغ في الاستنشاق إلا أن تكون صائماً»</strong>.</div>
+        <h3 class="item">3 - ترك السَّعوط في الأنف أولى، والقطرة والكحل</h3>
+        <p>ترك السعوط أولى لئلا يصل إلى حلقه لأن الأنف منفذ. أما القطرة في العين والأذن وكذا الكحل فتأخيرها إلى الليل أولى خروجاً من خلاف من منعها، وإن كان الصحيح أنه لا يفطر بها لعدم الدليل، لكن الاحتياط لهذه العبادة العظيمة أولى.</p>
+        <h3 class="item">ثانياً: مما يُشرع للصائم — 1 - السواك عند كل صلاة ووضوء</h3>
+        <div class="hadith">قال ﷺ: <strong>«لولا أن أشقّ على أمتي لأمرتهم بالسواك مع كل صلاة»</strong>، وفي لفظ: <strong>«عند كل وضوء»</strong>. قال ابن خزيمة: «ولم يستثنِ مفطراً دون صائم». وقال ﷺ فيما رواه عامر بن ربيعة: <strong>«رأيت النبي ﷺ ما لا أُحصي يتسوّك وهو صائم»</strong> — والعمل عند أهل العلم: لا يرون بالسواك للصائم بأساً أول النهار ولا آخره.</div>
+        <div class="rule green">الصواب مشروعية السواك أول النهار وآخره بشرط: ألا يتفتت فيذهب الفتات إلى الحلق، وألا يكون قوياً يجرح اللثة، وألا يكون فيه طعم مضاف.</div>
+        <h3 class="item">2 - من رأى من يأكل ناسياً وجب عليه إعلامه</h3>
+        <p>ولا يجوز السكوت كما يعتقده بعض العامة؛ لأن هذا من الأمر بالمعروف والنهي عن المنكر، ولأن الأكل في نهار رمضان منكر لكن الناسي معذور فوجب إعلامه، ولأنه من التعاون على البر والتقوى.</p>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        حديث الجنة: البخاري (1904) ومسلم (1151)، والثاني البخاري (1894)؛ حديث الزور: البخاري (1903) والأدب (6057)؛ حديث المبالغة: أبو داود (142) والترمذي (788) والنسائي (87) وابن ماجه (407)؛ حديث السواك: البخاري الجمعة (887) ومسلم الطهارة (252)، والمعلق قبل (1934) والنسائي الكبرى (3037) وأحمد (9928)، وابن خزيمة (2006)، وحديث عامر: أبو داود (2346) والترمذي (725).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal searchable" id="dam">
+      <div class="ch-head"><div class="ch-num">9</div><div><h2>أحكام الصيام مع الدم الخارج</h2><small>صفحات 34 - 35 • أربعة أنواع</small></div></div>
+      <div class="ch-body">
+        <p>الدم الخارج من الإنسان على أنواع:</p>
+        <h3 class="item">1 - دم الرعاف أو الجراحات ودم الدُّمَّل ونحوه: لا يؤثر في الصوم بل الصوم صحيح</h3>
+        <h3 class="item">2 - دم الاستحاضة: لا يؤثر، وصومها صحيح مع خروجه</h3>
+        <p>كما لا تمنع الصلاة والطواف، وكما لا يمنع زوجها منها؛ لأنه لا ضابط له وهو مستمر فهو كالرعاف والجراحات، ولا دليل يدل على منعها من العبادات معه كما دل النص على منعها مع الحيض والنفاس.</p>
+        <h3 class="item">3 - لو انقلع سنّ الصائم ولفظ الدم ولم يبتلعه فصومه صحيح</h3>
+        <p>لأن هذه الأشياء لا اختيار له فيها، ولا نص في تأثر الصوم بها، والأصل صحة صوم المسلم إلا بدليل يدل على فساده ولا دليل هنا.</p>
+        <h3 class="item">4 - الحائض والنفساء لا يحل لهما الصوم ويفطران ويقضيان</h3>
+        <p>وأنهما إذا صامتا لم يجزئهما الصوم وقد أجمع على ذلك أهل العلم.</p>
+        <div class="hadith">سألت معاذةُ عائشةَ: ما بال الحائض تقضي الصوم ولا تقضي الصلاة؟ فقالت: أحرورية أنت؟ قلت: لست بحرورية ولكني أسأل. قالت: <strong>«كان يصيبنا ذلك فنؤمر بقضاء الصوم ولا نؤمر بقضاء الصلاة»</strong>. وقال ﷺ: <strong>«أليس إذا حاضت لم تصلِّ ولم تصم؟»</strong> قلن: بلى، قال: <strong>«فذلك من نقصان دينها»</strong>.</div>
+        <div class="rule">وهذا من رحمة الله بالنساء؛ فإن الصلاة تتكرر خمس مرات فيشق قضاؤها، أما الصيام فعبادة سنوية لا تكون إلا مرة في السنة فوجب قضاؤه فلا يشق، وفي ذلك مصلحة للمرأة. ومتى وُجد دم الحيض أو النفاس في جزء من النهار فسد صوم ذلك اليوم سواء في أوله أو آخره ولو قبل الغروب بلحظة، ووجب قضاؤه.</div>
+        <details class="takhrij"><summary>📚 التخريج</summary>
+        الإجماع: المغني (152/3)؛ حديث معاذة: البخاري الحيض (321) ومسلم (335)؛ حديث نقصان الدين: البخاري الحيض (304).
+        </details>
+      </div>
+    </div>
+
+    <div class="chapter reveal">
+      <div class="ch-head" style="background:linear-gradient(135deg,#7a6410,var(--gold))"><div class="ch-num">✦</div><div><h2>الخاتمة</h2><small>صفحة 36</small></div></div>
+      <div class="ch-body" style="text-align:center">
+        <p>نسأل الله أن يرزقنا الإخلاص في الأعمال وحسن القصد فيما نأتي ونذر، وصلاح النية والعمل والصدق في الأقوال والأعمال، إنه جواد كريم.</p>
+        <p>والله الموفق والهادي إلى سواء السبيل.</p>
+        <p><strong>وصلى الله وسلم على نبينا محمد وآله وصحبه أجمعين.</strong></p>
+        <div style="font-size:28px;letter-spacing:8px;margin-top:10px">✻ <span style="color:var(--gold)">✻</span> ✻</div>
+      </div>
+    </div>
+
+    <div class="chapter reveal" id="fihris">
+      <div class="ch-head"><div class="ch-num"><i class="fa-solid fa-list"></i></div><div><h2>فهرس الموضوعات</h2><small>صفحة 37 من الأصل • اضغط للانتقال</small></div></div>
+      <div class="ch-body">
+        <div class="toc-grid">
+          <a href="#muqaddima"><span class="num">5</span> المقدمة <small>📖</small></a>
+          <a href="#wujub"><span class="num">7</span> بم يجب صوم رمضان؟ <small>🌙</small></a>
+          <a href="#qabl"><span class="num">10</span> أحكام الصيام قبل حلوله <small>📝</small></a>
+          <a href="#muftirat"><span class="num">12</span> مفطرات الصيام <small>⚠️</small></a>
+          <a href="#marid"><span class="num">17</span> للمريض والمسافر <small>🧳</small></a>
+          <a href="#futur"><span class="num">19</span> في الفطور والسحور <small>🍽️</small></a>
+          <a href="#rukhas"><span class="num">22</span> من الرخص في الصيام <small>✅</small></a>
+          <a href="#nawm"><span class="num">27</span> من أحكام نوم الصائم <small>💤</small></a>
+          <a href="#adab"><span class="num">29</span> مما يجب على الصائم اجتنابه <small>⛔</small></a>
+          <a href="#adab"><span class="num">32</span> مما يُشرع للصائم <small>⭐</small></a>
+          <a href="#dam"><span class="num">34</span> الصيام مع الدم الخارج <small>🩸</small></a>
+          <a href="#fihris"><span class="num">37</span> فهرس الموضوعات <small>📑</small></a>
+        </div>
+        <div class="note" style="margin-top:16px">📌 المصدر: كتاب «مختصر في أحكام الصيام» — تأليف الشيخ عبدالعزيز بن عبدالله الراجحي — مجموعة المؤلفات (26) — الطبعة الثالثة 1444هـ / 2023م — الصف والإخراج: مؤسسة عبدالعزيز الراجحي الوقفية. هذا الموقع عرض مرتب للنص مع الحفاظ على المعنى والأدلة، وليس نسخة مصورة.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div><h4><i class="fa-solid fa-moon"></i> مختصر في أحكام الصيام</h4><p style="font-size:14px">موقع تعليمي مجاني أُعدّ من الكتاب الأصلي (الطبعة الثالثة 1444هـ - 2023م) تأليف الشيخ عبدالعزيز بن عبدالله الراجحي. حقوق الطبع الأصلية محفوظة للمؤلف ومؤسسة عبدالعزيز الراجحي الوقفية.</p></div>
+      <div><h4>أقسام الموقع</h4><a href="#wujub">وجوب صوم رمضان</a><a href="#muftirat">مفطرات الصيام</a><a href="#marid">المريض والمسافر</a><a href="#futur">الفطور والسحور</a><a href="#rukhas">الرخص</a></div>
+      <div><h4>تابع</h4><a href="#nawm">نوم الصائم</a><a href="#adab">آداب الصائم</a><a href="#dam">الدم الخارج</a><a href="#fihris">الفهرس</a><a href="index.html">📖 كتاب التهجئة</a></div>
+    </div>
+    <div class="copy">© 2026 موقع مختصر أحكام الصيام • أُعدّ لخدمة العلم وطلابه • ﴿ فَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ ﴾</div>
+  </div>
+</footer>
+
+<button class="float-top" id="toTop" onclick="scrollTo({top:0,behavior:'smooth'})" title="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+const header=document.getElementById('header');
+const toTop=document.getElementById('toTop');
+addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled',scrollY>30);
+  const h=document.documentElement;
+  const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('readbar').style.width=p+'%';
+  toTop.style.display=scrollY>600?'block':'none';
+  // active link
+  const secs=[...document.querySelectorAll('.chapter[id],section[id]')];
+  let cur='home';
+  secs.forEach(s=>{if(scrollY>=s.offsetTop-140)cur=s.id});
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+});
+const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+burger.onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// search
+const input=document.getElementById('search'),info=document.getElementById('searchInfo');
+input.addEventListener('input',e=>{
+  const q=e.target.value.trim();
+  document.querySelectorAll('mark').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));
+  if(!q){info.textContent='';document.querySelectorAll('.chapter').forEach(c=>c.style.display='');return;}
+  let count=0;
+  document.querySelectorAll('.chapter').forEach(ch=>{
+    const txt=ch.innerText;
+    if(txt.includes(q)){
+      ch.style.display='';
+      // highlight inside body
+      count++;
+    } else ch.style.display='none';
+  });
+  info.textContent=q?`نتائج البحث عن «${q}»: ${count} باب مطابق — امسح البحث لعرض الكل`:'';
+  if(count===1){const v=document.querySelector('.chapter:not([style*="none"])');if(v)v.scrollIntoView({behavior:'smooth',block:'start'});}
+});
+let fs=100;
+function changeFont(d){fs=Math.min(135,Math.max(85,fs+d*5));document.body.style.fontSize=(fs/100*17)+'px';}
+function toggleDark(){document.body.classList.toggle('dark');}
+</script>
+<script>
+/* تسجيل عامل الخدمة: فقط على الموقع المنشور، وليس في التطوير ولا داخل إطار المعاينة */
+(function(){
+  if(!('serviceWorker' in navigator))return;
+  try{
+    if(window.self!==window.top)return;
+    var h=location.hostname, p=location.protocol;
+    if(p==='file:')return;
+    if(h===''||h==='localhost'||h==='127.0.0.1')return;
+    window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js',{scope:'./'}).catch(function(){});});
+  }catch(e){}
+})();
+</script>
+<style>
+#installPopup{position:fixed;inset:0;z-index:400;display:none;align-items:flex-end;justify-content:center;background:rgba(8,20,15,.55);backdrop-filter:blur(3px);padding:16px}
+#installPopup.show{display:flex;animation:ipFade .3s}
+@keyframes ipFade{from{opacity:0}to{opacity:1}}
+#installPopup .ip-card{background:#fff;border-radius:22px;max-width:440px;width:100%;padding:22px 20px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);border-top:6px solid #c19a1f;position:relative}
+#installPopup .ip-icon{width:64px;height:64px;border-radius:18px;margin:-54px auto 8px;display:block;box-shadow:0 8px 24px rgba(11,74,58,.3);background:#0b4a3a}
+#installPopup h3{color:#0b4a3a;font-size:20px;margin-bottom:4px}
+#installPopup p{font-size:14.5px;color:#5b6b66;margin-bottom:10px}
+#installPopup .ip-steps{background:#faf7ef;border:1px dashed #cbb96f;border-radius:12px;padding:8px 12px;font-size:13.5px;color:#5a4a12;margin-bottom:12px;text-align:right}
+#installPopup .ip-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+#installPopup .ip-install{background:linear-gradient(135deg,#0b4a3a,#147a5b);color:#fff;border:none;padding:11px 24px;border-radius:999px;font-weight:800;font-family:inherit;font-size:15px;cursor:pointer}
+#installPopup .ip-later{background:#eee9d6;color:#333;border:none;padding:11px 20px;border-radius:999px;font-weight:700;font-family:inherit;font-size:14px;cursor:pointer}
+#installPopup .ip-close{position:absolute;top:8px;left:8px;background:none;border:none;font-size:20px;cursor:pointer;color:#999}
+</style>
+<div id="installPopup" role="dialog" aria-label="تثبيت التطبيق">
+  <div class="ip-card">
+    <button class="ip-close" id="ipClose" aria-label="إغلاق">✕</button>
+    <img class="ip-icon" src="icons/icon-192.png" alt="أيقونة التطبيق">
+    <h3>📲 ثبّت تطبيق أحكام الصيام</h3>
+    <p>حمّل الموقع كتطبيق على هاتفك لقراءة الكتاب والاختبار حتى دون اتصال.</p>
+    <div class="ip-steps" id="ipSteps">على أندرويد: من قائمة المتصفح ⋮ اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».</div>
+    <div class="ip-btns">
+      <button class="ip-install" id="ipInstall">تثبيت الآن</button>
+      <button class="ip-later" id="ipLater">لاحقاً</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var POP='siyam_install_dismiss', deferred=null;
+  function installed(){
+    try{
+      if(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)return true;
+      if(window.navigator.standalone===true)return true;
+      if(document.referrer&&document.referrer.indexOf('android-app://')===0)return true;
+    }catch(e){}
+    return false;
+  }
+  function dismissed(){
+    try{
+      var v=localStorage.getItem(POP);
+      if(!v)return false;
+      return (Date.now()-parseInt(v,10))<7*24*3600*1000;
+    }catch(e){return false;}
+  }
+  function isIOS(){return /iphone|ipad|ipod/i.test(navigator.userAgent);}
+  function show(canInstall){
+    if(installed()||dismissed())return;
+    var box=document.getElementById('installPopup'),steps=document.getElementById('ipSteps'),btn=document.getElementById('ipInstall');
+    if(!box)return;
+    if(isIOS()){
+      steps.innerHTML='على آيفون: زر المشاركة <b>⎙</b> ثم «إضافة إلى الشاشة الرئيسية» ثم «إضافة».';
+      btn.style.display='none';
+    }else if(!canInstall){
+      steps.innerHTML='على أندرويد: من قائمة المتصفح ⋮ اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».';
+    }else{btn.style.display='';}
+    setTimeout(function(){box.classList.add('show');},2500);
+  }
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();deferred=e;show(true);
+  });
+  window.addEventListener('load',function(){setTimeout(function(){show(!!deferred);},3000);});
+  document.addEventListener('click',function(e){
+    if(e.target&&e.target.id==='ipInstall'){
+      if(deferred){
+        deferred.prompt();
+        if(deferred.userChoice){deferred.userChoice.then(function(c){if(c&&c.outcome==='accepted'){try{localStorage.setItem(POP,String(Date.now()));}catch(x){}}deferred=null;hide();});}
+        else{hide();}
+      }else{hide();}
+    }
+    if(e.target&&(e.target.id==='ipLater'||e.target.id==='ipClose')){
+      try{localStorage.setItem(POP,String(Date.now()));}catch(x){}
+      hide();
+    }
+    if(e.target&&e.target.id==='installPopup'){hide();}
+  });
+  function hide(){var b=document.getElementById('installPopup');if(b)b.classList.remove('show');}
+  window.addEventListener('appinstalled',function(){try{localStorage.setItem(POP,String(Date.now()));}catch(e){}hide();});
+})();
+</script>
+</body>
+</html>
