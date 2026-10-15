@@ -1,0 +1,33 @@
+{
+  "name": "مختصر في أحكام الصيام - الشيخ عبدالعزيز بن عبدالله الراجحي",
+  "short_name": "أحكام الصيام",
+  "description": "مختصر في أحكام الصيام مستل من الإلمام بشيء من أحكام الصيام - عرض مرتب وسهل القراءة مع اختبار تفاعلي",
+  "start_url": "./siyam.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar",
+  "theme_color": "#0b4a3a",
+  "background_color": "#faf7ef",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
