@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من نحن | كتاب التهجئة - المرحلة التمهيدية</title>
+<meta name="description" content="من نحن: الهيئة العامة للشؤون الإسلامية والأوقاف - إدارة المراكز والمعاهد الدينية. كتاب التهجئة للمرحلة التمهيدية: الرؤية والرسالة والقيم والمنهج.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --green:#0b3d2e;
+  --green-2:#146651;
+  --gold:#c9a86a;
+  --gold-light:#ecd9b0;
+  --sand:#faf6ef;
+  --sand-2:#f1e8d5;
+  --dark:#14201c;
+  --muted:#6b7c76;
+  --card:#ffffff;
+  --radius:18px;
+  --shadow:0 12px 40px rgba(11,61,46,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo','Tajawal',system-ui,sans-serif;background:var(--sand);color:var(--dark);line-height:1.9;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1200px,92%);margin-inline:auto}
+section{padding:70px 0}
+header{position:fixed;top:0;right:0;left:0;z-index:100;transition:.3s;background:rgba(250,246,239,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.06)}
+header.scrolled{background:rgba(11,61,46,.96);color:#fff}
+header.scrolled .nav-links a{color:#eee}
+header.scrolled .logo-text small{color:var(--gold-light)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--green-2));display:grid;place-items:center;color:var(--gold);font-size:24px;box-shadow:var(--shadow)}
+.logo-text{line-height:1.2}
+.logo-text strong{font-size:20px;font-weight:900}
+.logo-text small{font-size:13px;color:var(--muted)}
+.nav-links{display:flex;gap:22px;font-weight:700;font-size:15px}
+.nav-links a{position:relative;padding:6px 2px;opacity:.9}
+.nav-links a::after{content:'';position:absolute;bottom:0;right:0;width:0;height:3px;border-radius:10px;background:var(--gold);transition:.3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--green-2)}
+header.scrolled .nav-links a.active{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;padding:13px 28px;border-radius:999px;font-weight:800;border:none;cursor:pointer;transition:.3s;box-shadow:0 8px 24px rgba(11,61,46,.25)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(11,61,46,.3)}
+.btn-gold{background:linear-gradient(135deg,#b8934a,var(--gold));color:#1a1a1a}
+.hamburger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:inherit}
+/* Hero */
+.hero{min-height:62vh;display:flex;align-items:center;position:relative;padding:140px 0 60px;color:#fff;background:linear-gradient(rgba(8,30,23,.72),rgba(8,30,23,.6)),url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1920&auto=format&fit=crop') center/cover,linear-gradient(135deg,#0b3d2e,#1a7a5a)}
+.hero-inner{position:relative;z-index:2;max-width:800px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:700}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1.4;margin:18px 0}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:clamp(15px,2vw,19px);opacity:.92;max-width:640px}
+.hero-btns{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.sec-head{text-align:center;max-width:720px;margin:0 auto 40px}
+.sec-head .kicker{display:inline-block;background:#e8f3ee;color:var(--green-2);padding:6px 16px;border-radius:999px;font-weight:800;font-size:14px;margin-bottom:12px}
+.sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:900;line-height:1.5}
+.sec-head h2 span{color:var(--green-2)}
+.sec-head p{color:var(--muted);margin-top:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.06);transition:.3s}
+.card:hover{transform:translateY(-6px)}
+.card i{font-size:34px;color:var(--green-2);margin-bottom:12px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.quote{background:linear-gradient(180deg,#0b3d2e,#0e4a38);color:#fff;border-radius:26px;padding:46px 34px;text-align:center;position:relative;overflow:hidden;width:min(1200px,92%);margin-inline:auto}
+.quote::before{content:'﴿';position:absolute;font-size:200px;opacity:.07;top:-20px;right:20px}
+.aya{font-size:clamp(20px,3vw,30px);font-weight:800;color:var(--gold-light);line-height:2}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{background:#fff;border-radius:16px;padding:20px;text-align:center;box-shadow:var(--shadow);border-top:5px solid var(--gold)}
+.step strong{display:block;font-size:18px;margin-bottom:4px}
+.step small{color:var(--muted)}
+.values{list-style:none;display:grid;gap:10px;margin-top:14px}
+.values li{background:var(--sand);padding:12px 16px;border-radius:12px;font-weight:700}
+.values li i{color:var(--gold);margin-left:8px}
+.panel{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.05)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.cta{background:linear-gradient(135deg,#0b3d2e 0%,#1a7a5a 60%,#c9a86a 140%);color:#fff;border-radius:26px;padding:46px 30px;text-align:center}
+footer{background:#081e17;color:#cbd8d2;margin-top:70px;padding:50px 0 20px}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:26px}
+footer h4{color:#fff;margin-bottom:14px}
+footer a{display:block;padding:5px 0;opacity:.85}
+footer a:hover{color:var(--gold)}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:16px;text-align:center;font-size:14px;opacity:.7}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:980px){.grid3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+  section{padding:50px 0}
+  .nav-links{position:fixed;top:76px;right:12px;left:12px;background:#fff;color:#222;flex-direction:column;padding:20px;border-radius:18px;box-shadow:var(--shadow);display:none;gap:14px}
+  .nav-links.open{display:flex}
+  header.scrolled .nav-links a{color:#222}
+  .hamburger{display:block}
+  .nav .btn{display:none}
+  .grid3,.steps{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-book-quran"></i></div>
+      <div class="logo-text"><strong>روح السعودية</strong><br><small>اكتشف المملكة • Visit Saudi</small></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home">الرئيسية</a>
+      <a href="index.html#destinations">الوجهات</a>
+      <a href="index.html#experiences">التجارب</a>
+      <a href="about.html" class="active">من نحن</a>
+      <a href="index.html#gallery">المعرض</a>
+      <a href="index.html#contact">تواصل</a>
+    </nav>
+    <a href="index.html#contact" class="btn">احجز رحلتك <i class="fa-solid fa-plane"></i></a>
+    <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="badge"><i class="fa-solid fa-book-open"></i> كتاب التهجئة • المرحلة التمهيدية • الطبعة الأولى 1437هـ - 2016م</span>
+    <h1>من نحن: <span>نُعلّم القرآن حُبّاً</span><br>من الحرف الأول إلى الفاتحة</h1>
+    <p>نحن إدارة المراكز والمعاهد الدينية في الهيئة العامة للشؤون الإسلامية والأوقاف. منذ أن أسس الشيخ زايد وإخوانه حكام الإمارات مراكز تحفيظ القرآن الكريم، ونحن نبني جيلاً متوازناً معتدلاً: فرداً صالحاً في ذاته وأسرته، ومثمراً في مجتمعه.</p>
+    <div class="hero-btns">
+      <a href="#story" class="btn btn-gold">تعرّف على قصتنا <i class="fa-solid fa-arrow-down"></i></a>
+      <a href="index.html#contact" class="btn" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4)">تواصل معنا <i class="fa-solid fa-paper-plane"></i></a>
+    </div>
+  </div>
+</section>
+
+<section id="story" style="padding-bottom:20px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">📖 قصتنا باختصار</span>
+      <h2>مؤسسات تربوية <span>تصنع الإنسان</span> قبل الحافظ</h2>
+      <p>الحمد لله على نعمة القرآن: ﴿وَقُرْآنًا فَرَقْنَاهُ لِتَقْرَأَهُ عَلَى النَّاسِ عَلَىٰ مُكْثٍ﴾ [الإسراء: 106] — وخيركم من تعلّم القرآن وعلّمه.</p>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3><i class="fa-solid fa-mosque" style="color:var(--green-2)"></i> من نحن؟</h3>
+        <p>الهيئة العامة للشؤون الإسلامية والأوقاف — <strong>إدارة المراكز والمعاهد الدينية</strong> — الجهة المشرفة على مراكز تحفيظ القرآن الكريم، وعلى إعداد مناهج التأسيس ومنها <strong>كتاب التهجئة للمرحلة التمهيدية</strong>. نعمل على تحسين أداء المراكز والارتقاء برسالتها بدعم متواصل.</p>
+        <p style="margin-top:10px;color:var(--muted);font-size:15px">الكتاب ثمرة رعاية القيادة ودعمها غير المحدود لجهود الهيئة في توجيه المجتمع وتنمية ثقافته الدينية.</p>
+      </div>
+      <div class="panel reveal">
+        <h3><i class="fa-solid fa-bullseye" style="color:var(--green-2)"></i> رؤيتنا ورسالتنا وقيمنا</h3>
+        <p><strong>الرؤية:</strong> مرجعية إسلامية عالمية وتنمية وقفية مستدامة.</p>
+        <p><strong>الرسالة:</strong> تنمية الوعي الديني، وتطوير المساجد والمراكز القرآنية، والفتوى الشرعية، والحج والعمرة، والتنمية الوقفية، وابتكار منظومات ذكية لإسعاد المجتمع.</p>
+        <ul class="values">
+          <li><i class="fa-solid fa-check"></i> الانتماء للوطن وطاعة ولي الأمر</li>
+          <li><i class="fa-solid fa-check"></i> الإدارة بالنتائج وكن الأول</li>
+          <li><i class="fa-solid fa-check"></i> الابتكار والتعلم المستمر والعوائد والاستثمار</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:30px;padding-bottom:20px">
+  <div class="quote reveal">
+    <div class="aya">﴿ وَقُل رَّبِّ زِدْنِي عِلْمًا ﴾ [طه: 114]</div>
+    <p style="opacity:.85;margin-top:10px">قال رسول الله ﷺ: «خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ» — هذا حديثنا الذي نبدأ به كل درس.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">⭐ لماذا كتاب التهجئة؟</span>
+      <h2>أبرز <span>المزايا</span> التي تصنع الفرق</h2>
+      <p>منهج متدرج من الحرف المجرد حتى إتقان التلاوة الصحيحة لسورة الفاتحة</p>
+    </div>
+    <div class="grid3">
+      <div class="card reveal"><i class="fa-solid fa-arrow-down-a-z"></i><h3>تدرج مدروس</h3><p>حروف الهجاء، ثم الحركات، ثم الكلمات بالحركات، ثم التنوين، ثم السكون والقلقلة والشدة والمدود — خطوة بخطوة دون قفز.</p></div>
+      <div class="card reveal"><i class="fa-solid fa-image"></i><h3>تعلم بالصور</h3><p>كل حرف مقرون بصورة محببة: الأسد للهمزة، البرج للباء، التفاحة للتاء — ليربط الطفل بين الحرف والصوت والمعنى.</p></div>
+      <div class="card reveal"><i class="fa-solid fa-microphone"></i><h3>ضبط المصحف عملياً</h3><p>تدريب على علامات المصحف الحقيقية: السكون، الشدة، الميم الصغيرة للإقلاب، التنوين المركب والمتتابع، وحروف أوائل السور.</p></div>
+      <div class="card reveal"><i class="fa-solid fa-star-and-crescent"></i><h3>خاتمة قرآنية</h3><p>يتوج الكتاب بحفظ وتلاوة سورة الفاتحة بالضبط الملون، ليطبق الدارس كل ما تعلمه في أعظم سورة.</p></div>
+      <div class="card reveal"><i class="fa-solid fa-clipboard-check"></i><h3>متابعة وتقييم</h3><p>جدول متابعة لكل درس: تاريخ الانتهاء، التقدير (ممتاز / جيد جداً / جيد)، توقيع المحفظ والموجه — من صفحة 9 إلى 45.</p></div>
+      <div class="card reveal"><i class="fa-solid fa-award"></i><h3>جهة موثوقة</h3><p>إصدار رسمي حائز على شهادات الأيزو العالمية (ISO 9001 / 14001 / OHSAS 18001) ومركز إفتاء رسمي وخدمة فتاوى على مدار الساعة.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">🗺️ رحلة الدارس في الكتاب</span>
+      <h2>من <span>أ</span> إلى <span>الفاتحة</span> في مراحل واضحة</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><strong>1. الأساس</strong><small>حروف الهجاء + الحركات (ص 9-24)</small></div>
+      <div class="step"><strong>2. الكلمات</strong><small>بالحركات والتنوين والسكون (ص 25-30)</small></div>
+      <div class="step"><strong>3. الأحكام</strong><small>قلقلة، شدة، مدود، غنة (ص 31-43)</small></div>
+      <div class="step"><strong>4. الثمرة</strong><small>سورة الفاتحة كاملة (ص 45)</small></div>
+    </div>
+    <div class="panel reveal" style="margin-top:22px;text-align:center">
+      <h3>📞 المركز الرسمي للإفتاء بدولة الإمارات العربية المتحدة</h3>
+      <p style="color:var(--muted)">فتاوى هاتفية داخل الدولة: <strong dir="ltr">800 24 22</strong> • من خارجها: <strong dir="ltr">00971 2 2052 555</strong> (8 صباحاً - 8 مساءً) • رسائل SMS على <strong dir="ltr">2535</strong> • إلكترونية على مدار الساعة: <strong dir="ltr">www.awqaf.gov.ae</strong> • اقتراحات: <strong dir="ltr">00971 2 6143 666</strong></p>
+      <div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="index.html#contact" class="btn btn-gold">تواصل معنا الآن <i class="fa-solid fa-paper-plane"></i></a>
+        <a href="index.html#home" class="btn">عودة للرئيسية <i class="fa-solid fa-house"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div><h4>🌴 روح السعودية</h4><p style="font-size:14px">وجهتك الأولى لاكتشاف كنوز المملكة: تراث عريق، طبيعة ساحرة، وضيافة أصيلة. صُنع بحب في السعودية 🇸🇦</p></div>
+      <div><h4>الوجهات</h4><a href="index.html#destinations">العلا</a><a href="index.html#destinations">الرياض</a><a href="index.html#destinations">جدة</a><a href="index.html#destinations">نيوم</a></div>
+      <div><h4>روابط</h4><a href="about.html">من نحن</a><a href="index.html#plan">خطط رحلتك</a><a href="index.html#gallery">المعرض</a><a href="index.html#contact">احجز</a></div>
+      <div><h4>تواصل</h4><a href="#">📞 ‎+966 11 000 0000</a><a href="#">✉️ hello@ruh-saudi.sa</a><a href="#">📍 الرياض، المملكة العربية السعودية</a></div>
+    </div>
+    <div class="copy">© 2026 روح السعودية • جميع الحقوق محفوظة • رؤية 2030 • صفحة من نحن أُعدّت من كتاب التهجئة (الطبعة الأولى 1437هـ - 2016م) — حقوق الطبع محفوظة للهيئة</div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>30));
+const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+burger.onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
