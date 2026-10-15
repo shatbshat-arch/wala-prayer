@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار أحكام الصيام | مختصر الشيخ الراجحي</title>
+<meta name="description" content="اختبار تفاعلي متعدد الخيارات في كتاب مختصر في أحكام الصيام مع الدليل من الكتاب نفسه">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b4a3a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="أحكام الصيام">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+<style>
+:root{
+  --green:#0b4a3a; --green2:#147a5b; --green3:#e7f3ec;
+  --gold:#c19a1f; --gold2:#f2e2a8; --gold3:#fdf6dd;
+  --sand:#faf7ef; --ink:#1e2723; --muted:#687975;
+  --radius:20px; --shadow:0 14px 44px rgba(11,74,58,.12);
+  --quran:'Amiri Quran','Amiri',serif; --ruqaa:'Aref Ruqaa','Amiri',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:2;font-size:16.5px}
+a{text-decoration:none;color:inherit}
+.container{width:min(900px,93%);margin-inline:auto}
+header{position:fixed;top:0;right:0;left:0;z-index:100;background:rgba(250,247,239,.94);backdrop-filter:blur(14px);border-bottom:1px solid #e6ddc6}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:11px 0;gap:12px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--green2));display:grid;place-items:center;color:var(--gold2);font-size:22px}
+.logo strong{font-size:16px;display:block;line-height:1.3}
+.logo small{font-size:12px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:11px 22px;border-radius:999px;font-weight:800;border:none;cursor:pointer;font-family:inherit;font-size:15px;box-shadow:0 8px 24px rgba(11,74,58,.25);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#a8841c,var(--gold));color:#1d1d1d}
+.btn-sm{padding:8px 16px;font-size:14px}
+.hero{padding:120px 0 34px;color:#fff;background:linear-gradient(rgba(7,28,21,.85),rgba(7,28,21,.7)),url('https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1600&auto=format&fit=crop') center/cover;text-align:center}
+.hero h1{font-family:var(--ruqaa);font-size:clamp(28px,5vw,46px);margin:10px 0}
+.hero h1 span{color:var(--gold2)}
+.hero p{opacity:.9;max-width:640px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:6px 16px;border-radius:999px;font-size:13px;font-weight:700}
+.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #eee3c6;padding:26px;margin:22px 0}
+.q-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.q-count{background:var(--green3);color:var(--green);font-weight:900;padding:4px 16px;border-radius:999px;font-size:14px}
+.q-cat{background:var(--gold3);border:1px dashed var(--gold);color:#7a6410;font-size:13px;font-weight:700;padding:3px 12px;border-radius:999px}
+.q-text{font-size:20px;font-weight:800;line-height:1.9;margin-bottom:14px}
+.opts{display:grid;gap:10px}
+.opt{text-align:right;background:var(--sand);border:2px solid #e7dfc4;border-radius:14px;padding:12px 16px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;display:flex;gap:10px;align-items:flex-start}
+.opt:hover:not(:disabled){border-color:var(--green2);background:#fff;transform:translateY(-1px)}
+.opt .letter{width:32px;height:32px;border-radius:50%;background:#fff;border:1.5px solid #d9cfae;display:grid;place-items:center;font-weight:900;flex-shrink:0}
+.opt.correct{background:#e6f5ec;border-color:var(--green2)}
+.opt.correct .letter{background:var(--green2);color:#fff;border-color:var(--green2)}
+.opt.wrong{background:#fdecec;border-color:#d66}
+.opt.wrong .letter{background:#d66;color:#fff;border-color:#d66}
+.opt:disabled{cursor:default;opacity:.95}
+.dalil{display:none;background:#f3faf6;border:1.5px solid #bfe0d1;border-right:6px solid var(--green2);border-radius:14px;padding:14px 18px;margin-top:14px}
+.dalil.show{display:block;animation:fade .4s}
+.dalil strong{color:var(--green)}
+.dalil .ayah{font-family:var(--quran);font-size:21px;background:var(--gold3);border:1px solid var(--gold2);border-radius:10px;padding:8px 12px;display:block;margin-top:8px;text-align:center}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+#progressWrap{background:#e9e2cb;border-radius:999px;height:12px;overflow:hidden;margin-top:14px}
+#progressBar{height:100%;width:0;background:linear-gradient(90deg,var(--green2),var(--gold));transition:.4s}
+#scoreLine{font-weight:900;color:var(--green)}
+.result{text-align:center;padding:30px 20px}
+.result .big{font-size:64px;margin-bottom:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.review{margin-top:10px;text-align:right}
+.rev-item{background:#fbfaf5;border:1px solid #e7dfc4;border-radius:12px;padding:10px 14px;margin-bottom:8px;font-size:14.5px}
+.rev-item b{color:var(--green)}
+footer{background:#081e15;color:#cbd8d2;margin-top:50px;padding:36px 0 18px;text-align:center;font-size:14px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.card{padding:18px}.q-text{font-size:18px}}
+@media print{.q-nav,header .btn,footer{display:none}.dalil{display:block!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-clipboard-question"></i></div>
+      <div><strong>اختبار مختصر أحكام الصيام</strong><small>20 سؤالاً • مع الدليل من الكتاب نفسه</small></div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <a href="siyam.html" class="btn btn-sm"><i class="fa-solid fa-book-open"></i> الكتاب الرئيسي</a>
+      <a href="siyam.html#fihris" class="btn btn-sm btn-gold" style="display:none"></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge"><i class="fa-solid fa-star"></i> مستخرج من كتاب الشيخ عبدالعزيز الراجحي (26) • ص 5 - 37</span>
+    <h1>اختبر نفسك <span>في أحكام الصيام</span></h1>
+    <p>اختبار متعدد الخيارات — كل سؤال مع دليله من الكتاب (آية أو حديث أو نص المؤلف ورقم الصفحة). أجب ثم اقرأ الدليل قبل الانتقال.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="card" id="startCard">
+    <h2 style="color:var(--green)">📋 طريقة الاختبار</h2>
+    <p>• 20 سؤالاً تغطي أبواب الكتاب كاملة: الوجوب، النية، المفطرات، المريض والمسافر، الفطور والسحور، الرخص، النوم، الآداب، والدم.</p>
+    <p>• بعد اختيار الإجابة يظهر لك <strong>الدليل من الكتاب نفسه</strong> مع رقم الصفحة.</p>
+    <p>• الدرجة من 20، والتقدير يظهر في النهاية مع مراجعة الأخطاء.</p>
+    <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+      <button class="btn btn-gold" onclick="startQuiz()"><i class="fa-solid fa-play"></i> ابدأ الاختبار</button>
+      <a href="siyam.html" class="btn">مراجعة الكتاب أولاً <i class="fa-solid fa-book"></i></a>
+    </div>
+  </div>
+
+  <div class="card" id="quizCard" style="display:none">
+    <div class="q-head">
+      <span class="q-count" id="qCount">السؤال 1 / 20</span>
+      <span class="q-cat" id="qCat">الباب</span>
+      <span id="scoreLine">الدرجة: 0</span>
+    </div>
+    <div id="progressWrap"><div id="progressBar"></div></div>
+    <div class="q-text" id="qText"></div>
+    <div class="opts" id="opts"></div>
+    <div class="dalil" id="dalil"></div>
+    <div class="q-nav">
+      <button class="btn btn-sm" id="prevBtn" onclick="prevQ()">→ السابق</button>
+      <button class="btn btn-sm btn-gold" id="nextBtn" onclick="nextQ()" disabled>التالي ←</button>
+    </div>
+  </div>
+
+  <div class="card result" id="resultCard" style="display:none">
+    <div class="big" id="emoji">🎉</div>
+    <h2 id="scoreTitle" style="color:var(--green)"></h2>
+    <p id="scoreDesc"></p>
+    <div class="grid2">
+      <button class="btn" onclick="restart()"><i class="fa-solid fa-rotate-right"></i> إعادة الاختبار</button>
+      <a href="siyam.html" class="btn btn-gold">العودة للكتاب <i class="fa-solid fa-book-open"></i></a>
+    </div>
+    <div class="review" id="review"></div>
+  </div>
+</div>
+
+<footer>© 2026 اختبار مختصر أحكام الصيام • الأدلة من كتاب الشيخ عبدالعزيز بن عبدالله الراجحي • <a href="siyam.html" style="color:var(--gold2)">الكتاب الرئيسي</a></footer>
+
+<script>
+const QS=[
+{q:"بم يجب صوم رمضان؟",cat:"وجوب الصوم • ص 7",opts:["برؤية هلال رمضان أو إكمال شعبان ثلاثين يوماً، لا ثالث لهما","برؤية الهلال أو الحساب الفلكي أو إكمال شعبان","بإكمال شعبان فقط","برؤية الهلال فقط"],a:0,dalil:"نص الكتاب ص 7: «يجب صوم رمضان بأحد أمرين لا ثالث لهما: رؤية هلال رمضان، إكمال شعبان ثلاثين».",ayah:"الدليل: «لا تصوموا حتى تروا الهلال، ولا تفطروا حتى تروه، فإن غُمّ عليكم فاقدروا له» متفق عليه."},
+{q:"بم يجب الفطر من رمضان؟",cat:"وجوب الصوم • ص 7",opts:["برؤية هلال شوال بشهادة عدلين أو إكمال رمضان ثلاثين","بشهادة رجل واحد فقط","بالحساب الفلكي","بإعلان أي جهة"],a:0,dalil:"نص الكتاب ص 7: «ويجب الفطر بأحد أمرين: رؤية هلال شوال إذا ثبت بشهادة عدلين، إكمال رمضان ثلاثين».",ayah:"الدليل: «فإن غُمّ عليكم فأكملوا العدة ثلاثين» البخاري."},
+{q:"ما حكم الاعتماد على الحساب في دخول الشهر؟",cat:"وجوب الصوم • ص 9",opts:["باطل، وإنما يُعتمد على الرؤية أو إكمال العدة","جائز بل هو الأفضل","واجب في المدن الكبيرة","مستحب احتياطاً"],a:0,dalil:"نص الكتاب ص 9: الحديث «دليل على إبطال الاعتماد على الحساب... وإنما يعول على رؤية الهلال».",ayah:"الدليل: «إنا أمة أمية لا نكتب ولا نحسب، الشهر هكذا وهكذا» متفق عليه."},
+{q:"ما حكم صيام اليوم أو اليومين قبل رمضان بقصد الاحتياط؟",cat:"قبل حلوله • ص 10",opts:["يحرم","يجب","يستحب","مكروه فقط"],a:0,dalil:"نص الكتاب ص 10: «يحرم الصيام قبل رمضان بيوم أو يومين بقصد الاحتياط لرمضان».",ayah:"الدليل: «لا يتقدمن أحدكم رمضان بصوم يوم أو يومين...» متفق عليه. و«من صام يوم الشك فقد عصى أبا القاسم ﷺ»."},
+{q:"من يجوز له الصيام في آخر شعبان؟",cat:"قبل حلوله • ص 10",opts:["من وافق عادة (اثنين وخميس) أو صوماً واجباً كنذر وكفارة وقضاء","كل الناس احتياطاً","من أراد الاحتياط فقط","لا أحد مطلقاً"],a:0,dalil:"نص الكتاب ص 10: «لكن من وافق عادة له... كمن يصوم الاثنين والخميس، وكمن يصوم واجباً كنذر أو كفارة أو قضاء فلا بأس».",ayah:"الدليل: «إلا أن يكون رجل كان يصوم صومه فليصم ذلك اليوم»."},
+{q:"ما شرط صحة صوم الفرض؟",cat:"قبل حلوله • ص 10-11",opts:["نية من الليل قبل الفجر","النية بعد الفجر تكفي","لا تشترط النية","النية في أي وقت من اليوم"],a:0,dalil:"نص الكتاب ص 10: «لا يصح صوم الفرض إلا بنية من الليل».",ayah:"الدليل: «من لم يُجمِع الصيام قبل الفجر فلا صيام له» + «إنما الأعمال بالنيات»."},
+{q:"من نوى الإفطار وهو صائم فما حكمه؟",cat:"قبل حلوله • ص 11",opts:["أفطر وفسد صومه في أصح القولين لأن النية شرط في جميع العبادة","صومه صحيح ما لم يأكل","صومه مكروه فقط","عليه كفارة"],a:0,dalil:"نص الكتاب ص 11: «فمن نوى الإفطار من صومه أفطر وفسد صومه في أصح قولي العلماء... فبناء الأعمال على النيات».",ayah:"الدليل: «إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى»."},
+{q:"ما حكم من أكل أو شرب عامداً ذاكراً بعد تبين الفجر الثاني؟",cat:"المفطرات • ص 12",opts:["فسد صومه وعليه القضاء مع التوبة والندم والإقلاع","صومه صحيح","عليه الكفارة الكبرى","لا شيء عليه"],a:0,dalil:"نص الكتاب ص 12: «فمن أكل أو شرب مختاراً ذاكراً لصومه من غير عذر فسد صومه... وعليه قضاء ذلك اليوم مع التوبة».",ayah:"﴿ وَكُلُوا وَاشْرَبُوا حَتَّىٰ يَتَبَيَّنَ لَكُمُ الْخَيْطُ الْأَبْيَضُ مِنَ الْخَيْطِ الْأَسْوَدِ مِنَ الْفَجْرِ ﴾ [البقرة: 187]"},
+{q:"ما كفارة الجماع في نهار رمضان مرتبة؟",cat:"المفطرات • ص 12-13",opts:["عتق رقبة، فإن لم يجد فصيام شهرين متتابعين، فإن لم يستطع فإطعام ستين مسكيناً","إطعام عشرة مساكين فقط","صيام ثلاثة أيام فقط","لا كفارة عليه"],a:0,dalil:"نص الكتاب ص 12: الكفارة «عتق رقبة فإن لم يجد صام شهرين متتابعين فإن لم يستطع أطعم ستين مسكيناً» + القضاء والتوبة.",ayah:"الدليل: حديث أبي هريرة «هل تجد رقبة...؟ هل تستطيع شهرين...؟ فهل تجد إطعام ستين...؟» متفق عليه. وهو كبيرة لإقراره على قوله «هلكت»."},
+{q:"ما حكم من جامع ناسياً؟",cat:"المفطرات • ص 13",opts:["صومه صحيح في أصح القولين ولا قضاء ولا كفارة","يفسد وعليه القضاء والكفارة","عليه القضاء فقط","عليه الكفارة فقط"],a:0,dalil:"نص الكتاب ص 13: «وأما إذا جامع ناسياً فإن صومه صحيح في أصح قولي العلماء، ولا قضاء عليه ولا كفارة».",ayah:"قياساً على الناسي في الأكل والشرب."},
+{q:"ما حكم الإبر المغذية وحقن الدم؟",cat:"المفطرات • ص 13-14",opts:["مفطرة لأنها في معنى الأكل والشرب والدم خلاصة الطعام","غير مفطرة مطلقاً","مكروهة فقط","مستحبة"],a:0,dalil:"نص الكتاب ص 14: «الإبر المغذية يفطر بها... وكذا حقن الدم يفطر به لأن الدم خلاصة الطعام والشراب».",ayah:"أما الإبر العلاجية (وريد/عضل) فلا تفطر لأنها ليست أكلاً ولا في معناه، لكن تؤخر احتياطاً."},
+{q:"ما حكم شم البخور والحجامة والقيء عمداً؟",cat:"المفطرات • ص 14-16",opts:["شم البخور عامداً يفطر، والحجامة تفسد في أصح القولين، ومن استقاء عمداً فليقض","كلها لا تفطر","الحجامة فقط تفطر والباقي لا","القيء فقط يفطر"],a:0,dalil:"نص الكتاب: البخور عامداً يفطر (قول كثير من الفقهاء لنفوذه للدماغ) ومن غير قصد لا يفطر. الحجامة «أفطر الحاجم والمحجوم» وهو اختيار ابن تيمية وابن القيم وخالف الجمهور. القيء: «من ذرعه فلا قضاء ومن استقاء عمداً فليقض» وإجماع ابن المنذر.",ayah:"الدليل: «أفطر الحاجم والمحجوم» أبو داود + «من استقاء عمداً فليقض»."},
+{q:"المسافر والمريض ما حكمهما؟ وأيهما أفضل للمسافر؟",cat:"المريض والمسافر • ص 17-18",opts:["يجوز الفطر ويقضي، والمسافر مخير، والصحيح أن الصوم أفضل لإبراء الذمة","يجب الصوم ولا رخصة","يحرم الفطر مطلقاً","الفطر أفضل دائماً وجوباً"],a:0,dalil:"نص الكتاب ص 17-18: «المسافر يجوز له الفطر ثم يقضي» + «إن شئت فصم وإن شئت فأفطر» + «الصحيح أن الصوم أفضل لإبراء الذمة». والمرض المبيح: الشديد الذي يزيد بالصوم أو يُخشى تباطؤ برئه.",ayah:"﴿ فَمَن شَهِدَ مِنكُمُ الشَّهْرَ فَلْيَصُمْهُ ۖ وَمَن كَانَ مَرِيضًا أَوْ عَلَىٰ سَفَرٍ فَعِدَّةٌ مِّنْ أَيَّامٍ أُخَرَ ﴾ [البقرة: 185]"},
+{q:"ما حكم تعجيل الفطر والسحور وتأخير السحور؟",cat:"الفطور والسحور • ص 19-21",opts:["كلها مستحبة: التعجيل عند تحقق الغروب، والسحور، وتأخير السحور","كلها واجبة","كلها محرمة","التعجيل واجب والباقي بدعة"],a:0,dalil:"نص الكتاب: تعجيل الفطر مستحب (يدل على الامتثال وضد الغلو كاليهود). السحور مستحب. تأخير السحور مستحب.",ayah:"«لا يزال الناس بخير ما عجّلوا الفطر» + «تسحروا فإن في السحور بركة» + «قدر خمسين آية» بين السحور والأذان."},
+{q:"من أكل ناسياً أو دخل الماء حلقه بلا قصد فما حكمه؟",cat:"الرخص • ص 22",opts:["صومه صحيح ولا قضاء عليه","يفسد وعليه القضاء","عليه الكفارة","يبطل الصيام مطلقاً"],a:0,dalil:"نص الكتاب ص 22: الناسي صومه صحيح في أصح القولين (قول الجمهور). ومن دخل الماء حلقه بلا قصد أو غبار/ذباب لم يفسد لعدم التحرز.",ayah:"«إذا نسي فأكل وشرب فليتم صومه فإنما أطعمه الله وسقاه» + ﴿ لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ﴾."},
+{q:"ما حكم تقبيل الصائم ومباشرته؟ ومتى تفسد؟",cat:"الرخص • ص 24-25",opts:["جائزة ما لم يخش نزول شيء، فإن أنزل بالقبلة/تكرار النظر/استمناء فسد وعليه القضاء ولا كفارة إلا في الجماع","محرمة مطلقاً","مباحة ولو أنزل","توجب الكفارة دائماً"],a:0,dalil:"نص الكتاب ص 24-25: «يجوز أن يقبل ويباشر ما لم يخش تحرك شهوته» + «وكان أملككم لإربه». فإن أنزل فسد وعليه القضاء ولا كفارة (الكفارة في الجماع خاصة). ومن فكر أو نظر نظرة واحدة بلا تكرار فلا يفسد.",ayah:"الدليل: «كان ﷺ يقبّل ويباشر وهو صائم وكان أملككم لإربه» متفق عليه."},
+{q:"الشيخ الكبير والمريض الذي لا يُرجى برؤه والولي عن الميت؟",cat:"الرخص • ص 25-26",opts:["يفطرون ويطعمون عن كل يوم مسكيناً، ويستحب للولي الصيام عن الميت أو الإطعام وهو مخير","لا شيء عليهم","يجب عليهم الصوم","عليهم الكفارة الكبرى"],a:0,dalil:"نص الكتاب: الشيخ والمرأة الكبيرة ومن لا يُرجى برؤه يفطرون ويطعمون (قول الجمهور، وحكم الإطعام باقٍ). والولي «يستحب أن يصوم عن الميت ويصح ويبرأ به».",ayah:"﴿ وَعَلَى الَّذِينَ يُطِيقُونَهُ فِدْيَةٌ طَعَامُ مِسْكِينٍ ﴾ [البقرة: 184] + «من مات وعليه صيام صام عنه وليه» متفق عليه."},
+{q:"من نام جميع النهار أو احتلم أو أصبح جنباً؟",cat:"نوم الصائم • ص 27-28",opts:["النائم صح صومه، والمغمى جميع النهار يقضي، والاحتلام لا يضر، والجنب صومه صحيح إذا أمسك بنية قبل الفجر","كلهم يقضون","كلهم صومهم باطل","النوم يبطل الصيام"],a:0,dalil:"نص الكتاب ص 27-28: النوم لا يزول به الإحساس فصح، والإغماء يزول به الإحساس فلا بد من نية فيقضي. الاحتلام لا اختيار فيه. والجنب صح لحديث عائشة وهو قول الجمهور واستقر الإجماع.",ayah:"«إنما الأعمال بالنيات» + «يدركه الفجر وهو جنب من أهله ثم يغتسل ويصوم» متفق عليه + الحائض إذا انقطع دمها قبل الفجر صح صومها."},
+{q:"ماذا يجب على الصائم اجتنابه؟ وما حكم المبالغة في الاستنشاق والسعوط والقطرة؟",cat:"الآداب • ص 29-31",opts:["يحرم الرفث والجهل وقول الزور، ولا يبالغ في الاستنشاق، ويترك السعوط، ويؤخر القطرة والكحل احتياطاً وإن كان الصحيح عدم الفطر بها","كل ذلك مباح","الرفث واجب","الاستنشاق واجب مبالغاً"],a:0,dalil:"نص الكتاب: يحرم الرفث (الفاحش ومقدمات الجماع) والصخب وقول الزور، فإن سابه أحد فليقل إني صائم. ولا يبالغ في الاستنشاق خشية التسرب. والسعوط يُترك. والقطرة والكحل تأخيرها أولى خروجاً من الخلاف وإن كان الصحيح لا يفطر لعدم الدليل.",ayah:"«الصيام جنة... فليقل إني امرؤ صائم» + «من لم يدع قول الزور...» + «وبالغ في الاستنشاق إلا أن تكون صائماً»."},
+{q:"ما الذي يُشرع للصائم؟ ومن رأى مفطراً ناسياً؟",cat:"يُشرع • ص 32-33",opts:["السواك أول النهار وآخره بلا بأس، ومن رأى من يأكل ناسياً وجب إعلامه ولا يجوز السكوت","السواك يفطر","السكوت عن الناسي أفضل","لا يُشرع شيء"],a:0,dalil:"نص الكتاب: السواك مشروع ومستحب عند كل صلاة ووضوء «ولم يستثن مفطراً دون صائم» والعمل عند أهل العلم لا بأس به أول النهار وآخره بشرط ألا يتفتت ولا يجرح ولا طعم فيه. ومن رأى ناسياً وجب إعلامه لأنه منكر والإنكار والتعاون واجب.",ayah:"«لولا أن أشق على أمتي لأمرتهم بالسواك مع كل صلاة» + «رأيت النبي ﷺ ما لا أحصي يتسوك وهو صائم»."}
+];
+let idx=0,score=0,answered=Array(QS.length).fill(null);
+function startQuiz(){document.getElementById('startCard').style.display='none';document.getElementById('quizCard').style.display='';document.getElementById('resultCard').style.display='none';idx=0;score=0;answered=Array(QS.length).fill(null);render();}
+function render(){
+  const q=QS[idx];
+  document.getElementById('qCount').textContent=`السؤال ${idx+1} / ${QS.length}`;
+  document.getElementById('qCat').textContent=q.cat;
+  document.getElementById('scoreLine').textContent=`الدرجة: ${score}`;
+  document.getElementById('progressBar').style.width=((idx)/QS.length*100)+'%';
+  document.getElementById('qText').textContent=q.q;
+  const box=document.getElementById('opts');box.innerHTML='';
+  const letters=['أ','ب','ج','د'];
+  q.opts.forEach((t,i)=>{
+    const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="letter">${letters[i]}</span><span>${t}</span>`;
+    if(answered[idx]!==null){b.disabled=true;if(i===q.a)b.classList.add('correct');else if(i===answered[idx])b.classList.add('wrong');}
+    b.onclick=()=>answer(i);
+    box.appendChild(b);
+  });
+  const d=document.getElementById('dalil');
+  if(answered[idx]!==null){d.innerHTML=`<strong>📖 الدليل من الكتاب:</strong> ${q.dalil}<span class="ayah">${q.ayah}</span>`;d.classList.add('show');}
+  else{d.classList.remove('show');d.innerHTML='';}
+  document.getElementById('prevBtn').disabled=idx===0;
+  const nb=document.getElementById('nextBtn');
+  nb.disabled=answered[idx]===null;
+  nb.textContent=idx===QS.length-1?'عرض النتيجة ←':'التالي ←';
+}
+function answer(i){
+  if(answered[idx]!==null)return;
+  answered[idx]=i;
+  if(i===QS[idx].a)score++;
+  render();
+}
+function nextQ(){
+  if(idx<QS.length-1){idx++;render();window.scrollTo({top:0,behavior:'smooth'});}
+  else showResult();
+}
+function prevQ(){if(idx>0){idx--;render();}}
+function showResult(){
+  document.getElementById('quizCard').style.display='none';
+  const r=document.getElementById('resultCard');r.style.display='';
+  const pct=Math.round(score/QS.length*100);
+  let e='🎉',t='',d='';
+  if(pct>=90){e='🏆';t=`ممتاز! ${score} / ${QS.length}`;d='إتقان عالٍ لأحكام الصيام، بارك الله فيك. راجع الفهرس لتثبيت ما نقص إن وجد.';}
+  else if(pct>=75){e='🌟';t=`جيد جداً! ${score} / ${QS.length}`;d='فهم طيب، راجع الأبواب التي أخطأت فيها من الكتاب الرئيسي.';}
+  else if(pct>=50){e='📖';t=`جيد ${score} / ${QS.length}`;d='تحتاج مراجعة الكتاب مرة أخرى، الأدلة مذكورة تحت كل سؤال.';}
+  else{e='💪';t=`${score} / ${QS.length} — تحتاج مراجعة`;d='أنصحك بقراءة الكتاب الرئيسي كاملاً ثم إعادة الاختبار.';}
+  document.getElementById('emoji').textContent=e;
+  document.getElementById('scoreTitle').textContent=t;
+  document.getElementById('scoreDesc').textContent=d+` (${pct}%)`;
+  let h='<h3 style="margin-top:14px">مراجعة الإجابات مع الدليل:</h3>';
+  QS.forEach((q,i)=>{
+    const ok=answered[i]===q.a;
+    h+=`<div class="rev-item">${ok?'✅':'❌'} <b>س${i+1}:</b> ${q.q}<br>✔ الصواب: ${q.opts[q.a]}<br><span style="color:#555">📖 ${q.dalil}</span></div>`;
+  });
+  document.getElementById('review').innerHTML=h;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function restart(){startQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+<script>
+(function(){
+  if(!('serviceWorker' in navigator))return;
+  try{
+    if(window.self!==window.top)return;
+    var h=location.hostname, p=location.protocol;
+    if(p==='file:')return;
+    if(h===''||h==='localhost'||h==='127.0.0.1')return;
+    window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js',{scope:'./'}).catch(function(){});});
+  }catch(e){}
+})();
+</script>
+<style>
+#installPopup{position:fixed;inset:0;z-index:400;display:none;align-items:flex-end;justify-content:center;background:rgba(8,20,15,.55);backdrop-filter:blur(3px);padding:16px}
+#installPopup.show{display:flex;animation:ipFade .3s}
+@keyframes ipFade{from{opacity:0}to{opacity:1}}
+#installPopup .ip-card{background:#fff;border-radius:22px;max-width:440px;width:100%;padding:22px 20px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);border-top:6px solid #c19a1f;position:relative}
+#installPopup .ip-icon{width:64px;height:64px;border-radius:18px;margin:-54px auto 8px;display:block;box-shadow:0 8px 24px rgba(11,74,58,.3);background:#0b4a3a}
+#installPopup h3{color:#0b4a3a;font-size:20px;margin-bottom:4px}
+#installPopup p{font-size:14.5px;color:#5b6b66;margin-bottom:10px}
+#installPopup .ip-steps{background:#faf7ef;border:1px dashed #cbb96f;border-radius:12px;padding:8px 12px;font-size:13.5px;color:#5a4a12;margin-bottom:12px;text-align:right}
+#installPopup .ip-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+#installPopup .ip-install{background:linear-gradient(135deg,#0b4a3a,#147a5b);color:#fff;border:none;padding:11px 24px;border-radius:999px;font-weight:800;font-family:inherit;font-size:15px;cursor:pointer}
+#installPopup .ip-later{background:#eee9d6;color:#333;border:none;padding:11px 20px;border-radius:999px;font-weight:700;font-family:inherit;font-size:14px;cursor:pointer}
+#installPopup .ip-close{position:absolute;top:8px;left:8px;background:none;border:none;font-size:20px;cursor:pointer;color:#999}
+</style>
+<div id="installPopup" role="dialog" aria-label="تثبيت التطبيق">
+  <div class="ip-card">
+    <button class="ip-close" id="ipClose" aria-label="إغلاق">✕</button>
+    <img class="ip-icon" src="icons/icon-192.png" alt="أيقونة التطبيق">
+    <h3>📲 ثبّت تطبيق أحكام الصيام</h3>
+    <p>حمّل الموقع كتطبيق على هاتفك لقراءة الكتاب والاختبار حتى دون اتصال.</p>
+    <div class="ip-steps" id="ipSteps">على أندرويد: من قائمة المتصفح ⋮ اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».</div>
+    <div class="ip-btns">
+      <button class="ip-install" id="ipInstall">تثبيت الآن</button>
+      <button class="ip-later" id="ipLater">لاحقاً</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var POP='siyam_install_dismiss', deferred=null;
+  function installed(){
+    try{
+      if(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)return true;
+      if(window.navigator.standalone===true)return true;
+      if(document.referrer&&document.referrer.indexOf('android-app://')===0)return true;
+    }catch(e){}
+    return false;
+  }
+  function dismissed(){
+    try{
+      var v=localStorage.getItem(POP);
+      if(!v)return false;
+      return (Date.now()-parseInt(v,10))<7*24*3600*1000;
+    }catch(e){return false;}
+  }
+  function isIOS(){return /iphone|ipad|ipod/i.test(navigator.userAgent);}
+  function show(canInstall){
+    if(installed()||dismissed())return;
+    var box=document.getElementById('installPopup'),steps=document.getElementById('ipSteps'),btn=document.getElementById('ipInstall');
+    if(!box)return;
+    if(isIOS()){
+      steps.innerHTML='على آيفون: زر المشاركة <b>⎙</b> ثم «إضافة إلى الشاشة الرئيسية» ثم «إضافة».';
+      btn.style.display='none';
+    }else if(!canInstall){
+      steps.innerHTML='على أندرويد: من قائمة المتصفح ⋮ اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».';
+    }else{btn.style.display='';}
+    setTimeout(function(){box.classList.add('show');},2500);
+  }
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();deferred=e;show(true);
+  });
+  window.addEventListener('load',function(){setTimeout(function(){show(!!deferred);},3000);});
+  document.addEventListener('click',function(e){
+    if(e.target&&e.target.id==='ipInstall'){
+      if(deferred){
+        deferred.prompt();
+        if(deferred.userChoice){deferred.userChoice.then(function(c){if(c&&c.outcome==='accepted'){try{localStorage.setItem(POP,String(Date.now()));}catch(x){}}deferred=null;hide();});}
+        else{hide();}
+      }else{hide();}
+    }
+    if(e.target&&(e.target.id==='ipLater'||e.target.id==='ipClose')){
+      try{localStorage.setItem(POP,String(Date.now()));}catch(x){}
+      hide();
+    }
+    if(e.target&&e.target.id==='installPopup'){hide();}
+  });
+  function hide(){var b=document.getElementById('installPopup');if(b)b.classList.remove('show');}
+  window.addEventListener('appinstalled',function(){try{localStorage.setItem(POP,String(Date.now()));}catch(e){}hide();});
+})();
+</script>
+</body>
+</html>
