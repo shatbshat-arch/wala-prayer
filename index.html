@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كتاب التهجئة | المرحلة التمهيدية - موقع تعليمي تفاعلي</title>
+<meta name="description" content="كتاب التهجئة للمرحلة التمهيدية - الهيئة العامة للشؤون الإسلامية والأوقاف: تعلم الحروف والحركات والتنوين والسكون والقلقلة والشدة والمدود وضبط المصحف حتى سورة الفاتحة">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --green:#0b4a34; --green2:#147a55; --green3:#e7f3ec;
+  --gold:#c9a227; --gold2:#f4e3ac; --gold3:#fdf6dd;
+  --sand:#faf7ef; --ink:#1c2622; --muted:#667973;
+  --card:#ffffff; --radius:20px;
+  --shadow:0 14px 44px rgba(11,74,52,.12);
+  --quran:'Amiri Quran','Amiri',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Cairo','Tajawal',system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:2}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,93%);margin-inline:auto}
+section{padding:64px 0}
+/* progress bar */
+#readbar{position:fixed;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--green2));width:0;z-index:200}
+/* header */
+header{position:fixed;top:0;right:0;left:0;z-index:100;background:rgba(250,247,239,.92);backdrop-filter:blur(14px);border-bottom:1px solid #e6ddc6;transition:.3s}
+header.scrolled{background:rgba(11,74,52,.97);color:#fff}
+header.scrolled .nav-links a{color:#eee}
+header.scrolled .logo small{color:var(--gold2)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,var(--green),var(--green2));display:grid;place-items:center;color:var(--gold2);font-size:25px;box-shadow:var(--shadow);flex-shrink:0}
+.logo strong{font-size:19px;font-weight:900;display:block;line-height:1.2}
+.logo small{font-size:12.5px;color:var(--muted)}
+.nav-links{display:flex;gap:16px;font-weight:700;font-size:14.5px;flex-wrap:wrap}
+.nav-links a{padding:6px 10px;border-radius:999px;opacity:.92}
+.nav-links a:hover,.nav-links a.active{background:var(--green);color:#fff}
+header.scrolled .nav-links a:hover,header.scrolled .nav-links a.active{background:var(--gold);color:#222}
+.hamburger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:inherit}
+.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:13px 26px;border-radius:999px;font-weight:800;border:none;cursor:pointer;transition:.25s;font-family:inherit;font-size:15.5px;box-shadow:0 8px 24px rgba(11,74,52,.25)}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#a8841c,var(--gold));color:#1d1d1d}
+.btn-light{background:#fff;color:var(--green);border:2px solid var(--green)}
+.btn-sm{padding:8px 16px;font-size:14px}
+/* hero */
+.hero{min-height:92vh;display:flex;align-items:center;padding:130px 0 60px;color:#fff;position:relative;background:linear-gradient(rgba(7,28,21,.78),rgba(7,28,21,.68)),url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=1920&auto=format&fit=crop') center/cover}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(700px 350px at 75% 20%,rgba(201,162,39,.35),transparent)}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:700}
+.hero h1{font-size:clamp(30px,5vw,56px);font-weight:900;line-height:1.5;margin:16px 0}
+.hero h1 span{color:var(--gold2)}
+.hero p{opacity:.93;max-width:600px;font-size:clamp(15px,2vw,18.5px)}
+.hero-btns{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,.97);color:#222;border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+.hero-card h3{color:var(--green);margin-bottom:6px}
+.quran-preview{font-family:var(--quran);font-size:30px;line-height:2.2;text-align:center;background:var(--gold3);border:2px solid var(--gold2);border-radius:16px;padding:14px;margin:12px 0;color:#2b2110}
+.hero-stats{display:flex;gap:22px;margin-top:20px;flex-wrap:wrap}
+.hstat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:10px 18px;min-width:130px}
+.hstat strong{font-size:26px;display:block;line-height:1.2}
+.hstat span{font-size:13.5px;opacity:.88}
+/* toolbar */
+.toolbar{position:sticky;top:75px;z-index:50;background:#fff;border:1px solid #e8dfc7;border-radius:16px;box-shadow:var(--shadow);padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:-30px}
+.toolbar input[type=search]{flex:1;min-width:200px;padding:11px 16px;border-radius:12px;border:1.5px solid #e3dcc4;font-family:inherit;font-size:15px}
+.toolbar input:focus{outline:none;border-color:var(--green2)}
+.tool-btns{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--green3);color:var(--green);border:none;padding:9px 15px;border-radius:999px;font-weight:800;font-family:inherit;cursor:pointer;font-size:14px}
+.chip.on{background:var(--green);color:#fff}
+/* section head */
+.sec-head{text-align:center;max-width:760px;margin:0 auto 36px}
+.kicker{display:inline-block;background:var(--green3);color:var(--green2);padding:6px 18px;border-radius:999px;font-weight:800;font-size:14px;margin-bottom:12px}
+.sec-head h2{font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.6}
+.sec-head h2 span{color:var(--green2)}
+.sec-head p{color:var(--muted);margin-top:8px}
+.page-tag{display:inline-block;background:#fff;border:1px dashed var(--gold);color:#7a6410;font-size:13px;font-weight:700;padding:3px 12px;border-radius:999px;margin-top:8px}
+/* cards & grids */
+.grid-letters{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.lcard{background:#fff;border-radius:18px;padding:18px 14px;text-align:center;border:1px solid #eee3c6;box-shadow:0 6px 20px rgba(0,0,0,.06);transition:.25s;position:relative}
+.lcard:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold)}
+.lcard .big{font-family:var(--quran);font-size:56px;line-height:1.4;color:var(--green)}
+.lcard h4{font-size:17px}
+.lcard small{color:var(--muted);font-size:13.5px}
+.lcard .row{display:flex;gap:6px;justify-content:center;margin-top:10px}
+.speak{background:var(--green3);border:none;color:var(--green);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px}
+.speak:hover{background:var(--green);color:#fff}
+.harakat-line{font-family:var(--quran);font-size:26px;background:var(--sand);border-radius:10px;padding:4px;margin-top:8px;color:#5a4a12}
+.panel{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid #eee3c6}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.rule{border-right:5px solid var(--gold);background:var(--gold3);padding:14px 18px;border-radius:14px;margin:14px 0;font-weight:600}
+.rule.green{border-color:var(--green2);background:var(--green3)}
+table.t{width:100%;border-collapse:collapse;margin-top:14px;font-size:16px}
+table.t th{background:var(--green);color:#fff;padding:12px;font-size:15px}
+table.t th:first-child{border-radius:0 12px 0 0}table.t th:last-child{border-radius:12px 0 0 0}
+table.t td{border:1px solid #e9e0c6;padding:10px 8px;text-align:center}
+table.t tr:nth-child(even) td{background:#fdfaf0}
+.q{font-family:var(--quran);font-size:26px}
+.examples{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.ex{background:var(--sand);border:1.5px solid #e7dcc0;padding:8px 18px;border-radius:14px;font-family:var(--quran);font-size:26px;cursor:pointer;transition:.2s}
+.ex:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.ex small{font-family:'Cairo';font-size:12px;display:block;color:inherit;opacity:.75}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tab{padding:10px 20px;border-radius:999px;border:2px solid var(--green2);background:#fff;font-weight:800;font-family:inherit;cursor:pointer}
+.tab.on{background:var(--green);color:#fff;border-color:var(--green)}
+.fatiha{background:linear-gradient(180deg,#0b4a34,#0e5c41);color:#fff;border-radius:28px;padding:50px 30px;text-align:center;position:relative;overflow:hidden}
+.fatiha::before{content:'﷽';position:absolute;font-family:var(--quran);font-size:200px;opacity:.07;top:-10px;left:50%;transform:translateX(-50%)}
+.fatiha-text{font-family:var(--quran);font-size:clamp(26px,4vw,38px);line-height:2.4;max-width:800px;margin:18px auto;color:#fff}
+.fatiha-text .num{color:var(--gold2);font-size:.7em;border:1.5px solid var(--gold);border-radius:50%;width:1.9em;height:1.9em;display:inline-flex;align-items:center;justify-content:center;margin:0 6px;vertical-align:middle}
+.check-list{display:grid;gap:10px;margin-top:16px}
+.check{display:flex;align-items:center;gap:12px;background:var(--sand);padding:12px 16px;border-radius:14px;cursor:pointer;border:1.5px solid transparent}
+.check.done{background:var(--green3);border-color:var(--green2)}
+.check input{width:20px;height:20px;accent-color:var(--green2)}
+.check .pg{margin-right:auto;background:#fff;border:1px solid #ddd;padding:2px 12px;border-radius:999px;font-size:13px;font-weight:700}
+#progressWrap{background:#e9e2cb;border-radius:999px;height:14px;overflow:hidden;margin-top:14px}
+#progressBar{height:100%;width:0;background:linear-gradient(90deg,var(--green2),var(--gold));transition:.4s}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px}
+.toc a{background:var(--sand);padding:10px 16px;border-radius:12px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.toc a:hover{background:var(--green);color:#fff}
+.toc a span{font-size:13px;opacity:.7}
+footer{background:#081e15;color:#cbd8d2;margin-top:70px;padding:50px 0 20px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px}
+footer h4{color:#fff;margin-bottom:12px}
+footer a{display:block;padding:4px 0;opacity:.85;font-size:14.5px}
+footer a:hover{color:var(--gold2)}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:14px;text-align:center;font-size:13.5px;opacity:.7}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+.float-audio{position:fixed;bottom:20px;left:20px;z-index:150;background:var(--green);color:#fff;border:none;width:58px;height:58px;border-radius:50%;font-size:22px;cursor:pointer;box-shadow:var(--shadow)}
+@media(max-width:980px){.hero-inner,.two{grid-template-columns:1fr}.grid-letters{grid-template-columns:repeat(3,1fr)}.toc{grid-template-columns:1fr}.toolbar{top:70px}.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+section{padding:46px 0}
+.nav-links{position:fixed;top:74px;right:12px;left:12px;background:#fff;color:#222;flex-direction:column;padding:18px;border-radius:18px;box-shadow:var(--shadow);display:none;gap:6px;max-height:70vh;overflow:auto;z-index:120}
+.nav-links.open{display:flex}
+header.scrolled .nav-links a{color:#222}
+.nav-links a{font-size:15px}
+.hamburger{display:block}
+.nav .btn{display:none}
+.grid-letters{grid-template-columns:repeat(2,1fr)}
+.f-grid{grid-template-columns:1fr}
+.fatiha{padding:36px 16px}
+}
+@media print{.toolbar,header,.hero-btns,.float-audio,footer{display:none}body{background:#fff}section{padding:20px 0}.panel,.lcard{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<div id="readbar"></div>
+
+<header id="header">
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-book-quran"></i></div>
+      <div class="logo"><strong>كتاب التهجئة</strong><small>المرحلة التمهيدية • الهيئة العامة للشؤون الإسلامية والأوقاف</small></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">الرئيسية</a>
+      <a href="#intro">المقدمة</a>
+      <a href="#letters">الحروف</a>
+      <a href="#harakat">الحركات</a>
+      <a href="#tanween">التنوين</a>
+      <a href="#sukun">السكون والقلقلة</a>
+      <a href="#shadda">الشدة والغنة</a>
+      <a href="#mudud">المدود</a>
+      <a href="#dabt">ضبط المصحف</a>
+      <a href="#fatiha">الفاتحة</a>
+      <a href="#track">المتابعة</a>
+    </nav>
+    <a href="كتاب التهجئة.pdf" class="btn btn-sm" download><i class="fa-solid fa-file-pdf"></i> تحميل الكتاب PDF</a>
+    <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div>
+      <span class="badge"><i class="fa-solid fa-star"></i> الطبعة الأولى 1437هـ - 2016م • من الحرف الأول إلى الفاتحة</span>
+      <h1>كتاب <span>التهجئة</span><br>للمَرحلة التمهيدية</h1>
+      <p>موقع تعليمي تفاعلي يُحوّل الكتاب الورقي إلى رحلة ممتعة ومرتبة: حروف الهجاء بالصور، الحركات، الكلمات، التنوين، السكون، القلقلة، الشدة، المدود، وضبط المصحف — وتاجها حفظ سورة الفاتحة. اضغط على أي حرف أو كلمة لسماع نطقها.</p>
+      <div class="hero-btns">
+        <a href="#letters" class="btn btn-gold">ابدأ من الحروف <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="كتاب التهجئة.pdf" class="btn btn-light" style="background:rgba(255,255,255,.15);color:#fff;border-color:#fff" download><i class="fa-solid fa-download"></i> تصفح النسخة الأصلية</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><strong>28</strong><span>حرف هجاء بالصور</span></div>
+        <div class="hstat"><strong>24</strong><span>درساً من ص 9 إلى 45</span></div>
+        <div class="hstat"><strong>7</strong><span>أيام: من أ إلى الفاتحة</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3><i class="fa-solid fa-kaaba"></i> ﴿ وَقُل رَّبِّ زِدْنِي عِلْمًا ﴾ <small style="color:var(--muted)">[طه: 114]</small></h3>
+      <div class="quran-preview">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</div>
+      <p style="font-size:14.5px;color:var(--muted)">قال تعالى: ﴿ وَقُرْآنًا فَرَقْنَاهُ لِتَقْرَأَهُ عَلَى النَّاسِ عَلَىٰ مُكْثٍ ﴾ [الإسراء: 106]. هذا الكتاب ثمرة رعاية قيادة دولة الإمارات ومراكز تحفيظ القرآن منذ عهد الشيخ زايد وإخوانه حكام الإمارات.</p>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button class="btn btn-sm" onclick="speak('خيركم من تعلم القرآن وعلمه')"><i class="fa-solid fa-volume-high"></i> استمع للحديث</button>
+        <a href="#fatiha" class="btn btn-sm btn-gold">سورة الفاتحة <i class="fa-solid fa-star"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="🔍 ابحث عن حرف أو درس... مثال: قلقلة، مد، تنوين، ضاد">
+    <div class="tool-btns">
+      <button class="chip" onclick="changeFont(1)">تكبير الخط A+</button>
+      <button class="chip" onclick="changeFont(-1)">تصغير A-</button>
+      <button class="chip" onclick="window.print()"><i class="fa-solid fa-print"></i> طباعة</button>
+      <button class="chip on" id="tashkilBtn" onclick="toggleTashkil()">إظهار التشكيل</button>
+    </div>
+  </div>
+</div>
+
+<section id="intro" style="padding-top:50px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">📖 المقدمة - ص 6-7</span>
+      <h2>مؤسسات تربوية <span>تصنع الإنسان</span> قبل الحافظ</h2>
+      <p>ملخص مقدمة الهيئة العامة للشؤون الإسلامية والأوقاف - إدارة المراكز والمعاهد الدينية</p>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3><i class="fa-solid fa-mosque" style="color:var(--green2)"></i> من نحن ولماذا هذا الكتاب؟</h3>
+        <p>مراكز تحفيظ القرآن الكريم منذ أن أسسها الشيخ زايد وإخوانه حكام الإمارات مؤسسات تربوية تعليمية، تُحفّظ القرآن وتُعلّم أحكامه التجويدية، وتُسهم في بناء شخصية الفرد على التوازن والاعتدال، ليكون فرداً صالحاً في ذاته وأسرته، ومثمراً في مجتمعه.</p>
+        <p style="margin-top:8px">وتحرص الهيئة على دعم المراكز وتحسين أدائها، فأعدّت هذا الكتاب <strong>لتأسيس الدارس تهجيةً ونطقاً</strong> قبل الحفظ، بتدرج محكم من الحرف المجرد حتى التلاوة الصحيحة.</p>
+        <div class="rule green">💡 طريقة الكتاب: تعلّم بالصور + تهجية صوتية + ضبط المصحف عملياً + متابعة لكل درس بتقدير وتوقيع المحفظ والموجه.</div>
+      </div>
+      <div class="panel reveal">
+        <h3><i class="fa-solid fa-bullseye" style="color:var(--green2)"></i> الرؤية والرسالة والقيم</h3>
+        <p><strong>الرؤية:</strong> مرجعية إسلامية عالمية وتنمية وقفية مستدامة.</p>
+        <p><strong>الرسالة:</strong> تنمية الوعي الديني، وتطوير المساجد والمراكز القرآنية، والفتوى الشرعية، والحج والعمرة، والتنمية الوقفية، وابتكار منظومات ذكية لإسعاد المجتمع.</p>
+        <p><strong>القيم:</strong> الانتماء للوطن، طاعة ولي الأمر، الإدارة بالنتائج، كُن الأول، الابتكار، التعلم المستمر.</p>
+        <div class="rule">🏅 إصدار رسمي حائز على شهادات الأيزو العالمية (ISO 9001 / 14001 / OHSAS 18001) — حقوق الطبع محفوظة للهيئة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="letters" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">🔤 الدرس الأول</span>
+      <h2>حروف <span>الهجاء</span> الثمانية والعشرون</h2>
+      <p>ص 9 - كل حرف بصورته المحببة. اضغط على مكبر الصوت لسماع اسم الحرف، واضغط على المثال لسماع الكلمة</p>
+      <span class="page-tag">الكتاب ص 9 • جدول المتابعة: حروف الهجاء</span>
+    </div>
+    <div class="grid-letters reveal" id="lettersGrid"></div>
+    <div class="panel reveal" style="margin-top:18px">
+      <h3>✍️ كيف نتهجى؟ ثلاث خطوات ذهبية</h3>
+      <p><strong>1-</strong> انظر إلى الحرف وانطق اسمه (ألف، باء، تاء...). <strong>2-</strong> انطق صوته مع الحركة (بَ، بِ، بُ). <strong>3-</strong> اربطه بالصورة والكلمة (بَ مثل <strong>بَاب</strong>). كرر بصوت عالٍ، فالتهجئة سماع قبل أن تكون نظراً.</p>
+    </div>
+  </div>
+</section>
+
+<section id="harakat" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">🔊 الدرس الثاني</span>
+      <h2>الحَرَكات <span>الثلاث</span> والكلمات بها</h2>
+      <p>ص 10 - 26 • الفتحة َ والضمة ُ والكسرة ِ — ثم قراءة كلمات كاملة بالحركات</p>
+      <span class="page-tag">الكتاب ص 10 - 26</span>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3>الحركات مع كل الحروف</h3>
+        <div class="tabs">
+          <button class="tab on" onclick="showHarakah('fatha',this)">الفتحة َ - ص 10-15</button>
+          <button class="tab" onclick="showHarakah('damma',this)">الضمة ُ</button>
+          <button class="tab" onclick="showHarakah('kasra',this)">الكسرة ِ</button>
+        </div>
+        <div id="harakahBox" class="examples"></div>
+        <div class="rule green" id="harakahRule">الفَتْحَة: شرطة صغيرة فوق الحرف، تُنطق بفتح الفم: بَ تَ ثَ. جرّب الضغط على أي مقطع لسماعه.</div>
+      </div>
+      <div class="panel reveal">
+        <h3>📝 الكلمات بالحركات - ص 25-26</h3>
+        <p style="color:var(--muted);font-size:14.5px">اقرأ حرفاً حرفاً ثم اجمعها: خَ لَ قَ ← خَلَقَ</p>
+        <div class="examples" id="wordsBox"></div>
+        <div class="rule">💡 قاعدة: الحرف المتحرك يُنطق سريعاً خفيفاً. لا تمدّ الفتحة حتى تصير ألفاً: قَرَأَ وليست قَارَا.</div>
+        <table class="t">
+          <tr><th>الكلمة</th><th>تهجيتها</th><th>المعنى المبسط</th></tr>
+          <tr><td class="q">خَلَقَ</td><td>خَ لَ قَ</td><td>أوجد من العدم</td></tr>
+          <tr><td class="q">عَدَلَ</td><td>عَ دَ لَ</td><td>كان عادلاً</td></tr>
+          <tr><td class="q">فَرِحَ</td><td>فَ رِ حَ</td><td>سُرّ وسعد</td></tr>
+          <tr><td class="q">كُتِبَ</td><td>كُ تِ بَ</td><td>سُجّل وكُتب</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tanween" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">ً الدرس الثالث</span>
+      <h2>التَّنوين <span>والكلمات به</span></h2>
+      <p>ص 27-29 • تنوين الفتح ً وتنوين الضم ٌ وتنوين الكسر ٍ</p>
+      <span class="page-tag">الكتاب ص 27 - 29</span>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3>أشكال التنوين الثلاثة</h3>
+        <table class="t">
+          <tr><th>النوع</th><th>الشكل</th><th>مثال</th><th>النطق</th></tr>
+          <tr><td><strong>تنوين الفتح</strong></td><td class="q">بًا</td><td class="q">كِتَابًا</td><td><button class="speak" onclick="speak('كتابا')">🔊</button></td></tr>
+          <tr><td><strong>تنوين الضم</strong></td><td class="q">بٌ</td><td class="q">كِتَابٌ</td><td><button class="speak" onclick="speak('كتابٌ')">🔊</button></td></tr>
+          <tr><td><strong>تنوين الكسر</strong></td><td class="q">بٍ</td><td class="q">كِتَابٍ</td><td><button class="speak" onclick="speak('كتابٍ')">🔊</button></td></tr>
+        </table>
+        <div class="rule green">التنوين = نون ساكنة زائدة تُنطق ولا تُكتب: بٌ تُنطق (بُنْ). تنوين الفتح يحتاج ألفاً: قَلَمًا، إلا التاء المربوطة: رَحْمَةً.</div>
+      </div>
+      <div class="panel reveal">
+        <h3>كلمات بالحركات والتنوين - ص 28-29</h3>
+        <div class="examples" id="tanweenBox"></div>
+        <div class="rule">⚠️ تنبيه: لا تقف على التنوين بنون ظاهرة في تنوين الفتح، بل بألف مد: غَفُورًا ← غَفُورَا عند الوقف.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sukun" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">ْ الدرس الرابع</span>
+      <h2>السُّكون <span>وحروف القلقلة</span></h2>
+      <p>ص 30-31 • الحرف الساكن يُقرأ مع ما قبله، وحروف القلقلة الخمسة تُقلقل عند سكونها</p>
+      <span class="page-tag">الكتاب ص 30 - 31</span>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3>السكون في الكلمات - ص 30 ( ْ )</h3>
+        <p>السكون دائرة صغيرة فوق الحرف، ومعناه: قِف على الحرف واقرأه مع ما قبله مقطعاً واحداً.</p>
+        <div class="examples" id="sukunBox"></div>
+        <div class="rule green">مثال التهجي: يَـكْ ← تُنطق (يَكْ) مقطعاً واحداً، ثم تُكمل: يَكْتُبُ. اضغط على الكلمات لسماع تقسيمها.</div>
+      </div>
+      <div class="panel reveal" style="border-top:6px solid var(--gold)">
+        <h3>🔔 حروف القلقلة الخمسة - ص 31: ق ط ب ج د (قطب جد)</h3>
+        <p>إذا سكنت هذه الحروف خرج صوتها باهتزاز وقوة، كأنها تُناديك. جرّب وضع يدك على حنجرتك ولاحظ الاهتزاز.</p>
+        <div class="examples" id="qalqalahBox"></div>
+        <table class="t">
+          <tr><th>الحرف</th><th>ساكناً</th><th>في كلمة</th></tr>
+          <tr><td class="q">قْ</td><td class="q">أَقْ</td><td class="q">يَقْطَعُ <button class="speak" onclick="speak('يقطع')">🔊</button></td></tr>
+          <tr><td class="q">طْ</td><td class="q">أَطْ</td><td class="q">يَطْمَعُ</td></tr>
+          <tr><td class="q">بْ</td><td class="q">أَبْ</td><td class="q">يَبْخَلُ</td></tr>
+          <tr><td class="q">جْ</td><td class="q">أَجْ</td><td class="q">يَجْعَلُ</td></tr>
+          <tr><td class="q">دْ</td><td class="q">أَدْ</td><td class="q">يَدْخُلُ</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shadda" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">ّ الدرس الخامس</span>
+      <h2>الشَّدَّة <span>والنون والميم المشددتان</span></h2>
+      <p>ص 32-33 • الحرف المشدد = حرفان: الأول ساكن والثاني متحرك، مع غنة في النون والميم</p>
+      <span class="page-tag">الكتاب ص 32 - 33</span>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3>الشدة في الكلمات - ص 32 ( ّ )</h3>
+        <p>الشدة مثل حرف (س) صغيرة فوق الحرف. ننطق الحرف مرتين: مرة ساكنة ومرة متحركة.</p>
+        <div class="examples" id="shaddaBox"></div>
+        <div class="rule">مثال: مَرَّ أصلها مَرْرَ. رَبَّ، عَلَّمَ، قَدَّرَ. لاحظ الفرق بين مَدَرَ (مخففة) ومَدَّرَ؟ لا — بل بين دَرَسَ ودَرَّسَ: التشديد يغيّر المعنى!</div>
+      </div>
+      <div class="panel reveal">
+        <h3>🎵 الغنة: النون والميم المشددتان - ص 33</h3>
+        <p>تُغنّ بمقدار حركتين (عدّ: واحد، اثنان) مع صوت جميل من الأنف.</p>
+        <div class="examples" id="ghunnaBox"></div>
+        <div class="rule green">أمثلة قرآنية محببة: ﴿ إِنَّ ﴾ ﴿ ثُمَّ ﴾ ﴿ جَنَّةٍ ﴾ ﴿ مُحَمَّدٌ ﴾. أغمض عينيك وأطل الغنة قليلاً.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mudud" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">ا و ي الدرس السادس</span>
+      <h2>حروف <span>المد</span> وعلامة المد</h2>
+      <p>ص 34-36 • الألف والواو والياء السواكن، ثم علامة المد ( ~ ) للمد الزائد</p>
+      <span class="page-tag">الكتاب ص 34 - 36</span>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3>حروف المد الثلاثة - ص 34-35</h3>
+        <table class="t">
+          <tr><th>حرف المد</th><th>شرطه</th><th>مثال</th></tr>
+          <tr><td class="q">ا</td><td>ما قبلها مفتوح: قَالَ</td><td class="q">مَا - كَانَ <button class="speak" onclick="speak('قال كان')">🔊</button></td></tr>
+          <tr><td class="q">و</td><td>ما قبلها مضموم: يَقُولُ</td><td class="q">نُور - رَسُول <button class="speak" onclick="speak('يقول نور')">🔊</button></td></tr>
+          <tr><td class="q">ي</td><td>ما قبلها مكسور: قِيلَ</td><td class="q">دِين - كَرِيم <button class="speak" onclick="speak('قيل دين')">🔊</button></td></tr>
+        </table>
+        <div class="examples" id="maddBox"></div>
+        <div class="rule green">المد الطبيعي يُمد حركتين فقط (مقدار قبض الإصبع وبسطه). لا تزد ولا تنقص.</div>
+      </div>
+      <div class="panel reveal">
+        <h3>〰️ علامة المد ( ~ ) - ص 36 والحروف الصغيرة</h3>
+        <p>إذا رأيت علامة ( ~ ) فوق الألف فمُدّ 4 أو 5 حركات (مد زائد واجب أو جائز). والحروف الصغيرة (ٰ ى ۥ) تدل على حروف محذوفة يجب نطقها.</p>
+        <div class="examples">
+          <span class="ex">ٱلسَّمَآءُ<small>مد واجب 4-5</small></span>
+          <span class="ex">جَآءَ<small>مد واجب</small></span>
+          <span class="ex">مَٰلِكِ<small>ألف صغيرة تُنطق</small></span>
+          <span class="ex">ۦ<small>ياء صغيرة</small></span>
+        </div>
+        <h3 style="margin-top:16px">🔠 حروف أوائل السور - ص 37</h3>
+        <p style="font-size:14.5px">مثل: <span class="q">الٓمٓ</span> تُهجى: ألفْ لامْ مِيمْ. الألف لا تُمد، وحروف (حي طهر) تُمد حركتين، وحروف (سنقص لكم) تُمد 6 حركات، والعين 4 أو 6.</p>
+        <div class="examples"><span class="ex">الٓمٓ<small>ألف لام ميم</small></span><span class="ex">حمٓ<small>حا ميم</small></span><span class="ex">طه<small>طا ها</small></span><span class="ex">يسٓ<small>يا سين</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dabt" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">📜 الدرس السابع - ضبط المصحف</span>
+      <h2>كيف تقرأ <span>ضبط المصحف</span> كالمحترفين؟</h2>
+      <p>ص 38-43 • السكون والتنوين المركب والمتتابع والميم الصغيرة — علامات تخبرك: أظهِر أم أغنّ؟</p>
+      <span class="page-tag">الكتاب ص 38 - 43</span>
+    </div>
+    <div class="two">
+      <div class="panel reveal">
+        <h3>1️⃣ النون والميم الساكنتان: مظهرة أم مُغنّة؟</h3>
+        <div class="rule green"><strong>عليها سكون ( ـنْـ ): أظهر بلا غنة - ص 38.</strong> مثال: <span class="q">مِنْهُمْ • أَنْعَمْتَ</span></div>
+        <div class="rule"><strong>بدون سكون ( ـنـ ): اغنّ - ص 39.</strong> مثال: <span class="q">مِن جُوعٍ • مِن ثَمَرَةٍ</span> — النون تُخفى أو تُدغم بغنة.</div>
+        <h3 style="margin-top:12px">2️⃣ التنوين المركب والمتتابع - ص 40</h3>
+        <div class="rule green"><strong>مركّب ( ًـ ـٌـ ـٍـ ): إظهار بلا غنة.</strong> مثال: <span class="q">عَلِيمٌ حَكِيمٌ</span> — الحركات فوق بعضها تماماً.</div>
+        <div class="rule"><strong>متتابع ( ٙـ ـٚـ ـٛـ ): غنّة.</strong> مثال: <span class="q">مَثَلًا مَّا • كِرَامًا كَاتِبِينَ</span> — الحركات متتابعة مشوّشة قليلاً.</div>
+      </div>
+      <div class="panel reveal">
+        <h3>3️⃣ الميم الصغيرة = اقلب ميماً - ص 41 (الإقلاب ۢ)</h3>
+        <p>إذا رأيت ميماً صغيرة فوق النون أو التنوين فاقلبها ميماً مع الغنة: <span class="q">مِنۢ بَعْدِ • سَمِيعُۢم بَصِيرٌ</span></p>
+        <h3 style="margin-top:12px">4️⃣ الإدغام: في (ي - و) بغنة، وفي (ل - ر) بلا غنة</h3>
+        <div class="rule"><strong>ص 42 - قبل (ي، و):</strong> تُقرأ بغنة مشددة دون إظهار الشدة: <span class="q">مَن يَقُولُ • مِن وَاقٍ</span></div>
+        <div class="rule green"><strong>ص 43 - قبل (ل، ر):</strong> تُقرأ مشددة بلا غنة مع بيان الشدة: <span class="q">مِن رَّبِّهِمْ • هُدًى لِّلْمُتَّقِينَ</span></div>
+        <p style="font-size:14px;color:var(--muted)">💡 خلاصة ذهبية: انظر إلى النون: هل عليها سكون؟ هل التنوين مركب أم متتابع؟ هل بعدها ميم صغيرة أو ياء أو لام؟ العلامة تخبرك بالحكم قبل أن تحفظ اسمه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fatiha" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">⭐ الثمرة - ص 45</span>
+      <h2>سورة <span>الفاتحة</span> كاملة بالضبط الملون</h2>
+      <p>طبّق كل ما تعلمته في أعظم سورة. اقرأ آية آية، واستمع، وكرر حتى الإتقان</p>
+      <span class="page-tag">الكتاب ص 45</span>
+    </div>
+    <div class="fatiha reveal">
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-gold btn-sm" onclick="speak('بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم مالك يوم الدين إياك نعبد وإياك نستعين اهدنا الصراط المستقيم صراط الذين أنعمت عليهم غير المغضوب عليهم ولا الضالين')"><i class="fa-solid fa-play"></i> استمع للسورة كاملة</button>
+        <button class="btn btn-sm" style="background:rgba(255,255,255,.15);border:1px solid #fff" onclick="toggleFatihaSize()"><i class="fa-solid fa-text-height"></i> تكبير النص</button>
+      </div>
+      <div class="fatiha-text" id="fatihaText">
+        بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ <span class="num">١</span><br>
+        ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ <span class="num">٢</span><br>
+        ٱلرَّحْمَٰنِ ٱلرَّحِيمِ <span class="num">٣</span> مَٰلِكِ يَوْمِ ٱلدِّينِ <span class="num">٤</span><br>
+        إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ <span class="num">٥</span><br>
+        ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ <span class="num">٦</span><br>
+        صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ <span class="num">٧</span>
+      </div>
+      <p style="opacity:.85;max-width:640px;margin:0 auto;font-size:14.5px">لاحظ فيها: الشدة (إِيَّاكَ)، المد (ٱلضَّآلِّينَ 6 حركات)، الألف الصغيرة (ٱلْعَٰلَمِينَ)، والنون المظهرة (أَنْعَمْتَ عليها سكون).</p>
+    </div>
+  </div>
+</section>
+
+<section id="track" style="padding-top:10px">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">✅ جدول المتابعة - ص 46-47</span>
+      <h2>تابِع <span>تقدُّمك</span> درساً بدرس</h2>
+      <p>علّم على كل درس تتقنه. يُحفظ تقدمك في متصفحك تلقائياً، ويمكن طباعة الجدول لتوقيع المحفظ والموجه</p>
+    </div>
+    <div class="panel reveal">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <strong id="progressText">التقدم: 0 من 24 درساً (0%)</strong>
+        <div style="display:flex;gap:8px">
+          <button class="chip" onclick="resetProgress()">تصفير</button>
+          <button class="chip on" onclick="window.print()">طباعة الجدول 🖨️</button>
+        </div>
+      </div>
+      <div id="progressWrap"><div id="progressBar"></div></div>
+      <div class="check-list" id="trackList"></div>
+      <div class="toc" style="margin-top:18px">
+        <a href="#letters">حروف الهجاء <span>ص 9</span></a>
+        <a href="#harakat">الحركات <span>ص 10</span></a>
+        <a href="#harakat">الكلمات بالحركات <span>ص 25</span></a>
+        <a href="#tanween">التنوين <span>ص 27</span></a>
+        <a href="#sukun">السكون <span>ص 30</span></a>
+        <a href="#sukun">القلقلة <span>ص 31</span></a>
+        <a href="#shadda">الشدة <span>ص 32</span></a>
+        <a href="#shadda">الغنة <span>ص 33</span></a>
+        <a href="#mudud">المدود <span>ص 34-36</span></a>
+        <a href="#dabt">ضبط المصحف <span>ص 38-43</span></a>
+        <a href="#fatiha">سورة الفاتحة <span>ص 45</span></a>
+        <a href="كتاب التهجئة.pdf" download>الفهرس الكامل <span>ص 49-50 + PDF</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="container">
+    <div class="panel reveal" style="text-align:center;background:linear-gradient(135deg,#0b4a34,#147a55 60%,#c9a227 140%);color:#fff;border:none">
+      <h2 style="font-size:clamp(22px,3.5vw,32px)">📞 المركز الرسمي للإفتاء - دولة الإمارات</h2>
+      <p style="opacity:.92">هاتف داخل الدولة: <strong dir="ltr">800 24 22</strong> • من خارجها: <strong dir="ltr">00971 2 2052 555</strong> (8 صباحاً - 8 مساءً) • رسائل SMS: <strong dir="ltr">2535</strong> • الموقع: <strong dir="ltr">www.awqaf.gov.ae</strong></p>
+      <div style="margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a href="كتاب التهجئة.pdf" class="btn btn-gold" download>تحميل الكتاب الأصلي PDF <i class="fa-solid fa-download"></i></a>
+        <a href="#home" class="btn" style="background:rgba(255,255,255,.15);border:1px solid #fff">العودة للبداية <i class="fa-solid fa-house"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div><h4><i class="fa-solid fa-book-quran"></i> كتاب التهجئة - المرحلة التمهيدية</h4><p style="font-size:14px">موقع تعليمي مجاني أُعدّ من الكتاب الأصلي (الطبعة الأولى 1437هـ - 2016م) الصادر عن الهيئة العامة للشؤون الإسلامية والأوقاف - إدارة المراكز والمعاهد الدينية. حقوق الطبع الأصلية محفوظة للهيئة.</p></div>
+      <div><h4>أقسام الموقع</h4><a href="#letters">حروف الهجاء</a><a href="#harakat">الحركات والكلمات</a><a href="#tanween">التنوين</a><a href="#sukun">السكون والقلقلة</a><a href="#fatiha">سورة الفاتحة</a></div>
+      <div><h4>المصدر</h4><a href="كتاب التهجئة.pdf" download>📕 تحميل PDF الأصلي</a><a href="#track">✅ جدول المتابعة</a><a href="#intro">📖 المقدمة والرؤية</a><a href="about.html">ℹ️ صفحة من نحن</a></div>
+    </div>
+    <div class="copy">© 2026 موقع كتاب التهجئة التعليمي • أُعدّ لخدمة القرآن الكريم وطلابه • ﴿ وَقُل رَّبِّ زِدْنِي عِلْمًا ﴾</div>
+  </div>
+</footer>
+
+<button class="float-audio" onclick="speak(document.getSelection().toString() || 'خيركم من تعلم القرآن وعلمه')" title="استمع للنص المحدد"><i class="fa-solid fa-volume-high"></i></button>
+
+<script>
+const LETTERS=[
+["أ","ألف","أَسَد","بَ بِ بُ"],["ب","باء","بَاب","بَ بِ بُ"],["ت","تاء","تُفَّاحَة","تَ تِ تُ"],["ث","ثاء","ثَعْلَب","ثَ ثِ ثُ"],
+["ج","جيم","جَمَل","جَ جِ جُ"],["ح","حاء","حِصَان","حَ حِ حُ"],["خ","خاء","خَرُوف","خَ خِ خُ"],["د","دال","دَار","دَ دِ دُ"],
+["ذ","ذال","ذُرَة","ذَ ذِ ذُ"],["ر","راء","رَجُل","رَ رِ رُ"],["ز","زاي","زَهْرَة","زَ زِ زُ"],["س","سين","سَمَكَة","سَ سِ سُ"],
+["ش","شين","شَمْس","شَ شِ شُ"],["ص","صاد","صَقْر","صَ صِ صُ"],["ض","ضاد","ضِفْدَع","ضَ ضِ ضُ"],["ط","طاء","طَائِرَة","طَ طِ طُ"],
+["ظ","ظاء","ظَرْف","ظَ ظِ ظُ"],["ع","عين","عَسَل","عَ عِ عُ"],["غ","غين","غَيْمَة","غَ غِ غُ"],["ف","فاء","فِيل","فَ فِ فُ"],
+["ق","قاف","قَمَر","قَ قِ قُ"],["ك","كاف","كِتَاب","كَ كِ كُ"],["ل","لام","لَيْمُون","لَ لِ لُ"],["م","ميم","مَسْجِد","مَ مِ مُ"],
+["ن","نون","نَجْمَة","نَ نِ نُ"],["هـ","هاء","هِلَال","هَ هِ هُ"],["و","واو","وَرْدَة","وَ وِ وُ"],["ي","ياء","يَد","يَ يِ يُ"]];
+const grid=document.getElementById('lettersGrid');
+grid.innerHTML=LETTERS.map(l=>`<div class="lcard" data-name="${l[1]} ${l[2]} ${l[0]}">
+<div class="big">${l[0]}</div><h4>${l[1]}</h4><small>مثال: ${l[2]}</small>
+<div class="harakat-line">${l[3]}</div>
+<div class="row"><button class="speak" onclick="speak('${l[1]}')" title="اسم الحرف">🔊</button><button class="speak" onclick="speak('${l[2]}')" title="المثال">📷</button><button class="speak" onclick="speak('${l[3].replace(/ /g,' ')}')" title="الحركات">🎵</button></div></div>`).join('');
+
+const WORDS=["خَلَقَ|خلق","عَدَلَ|عدل","ذَهَبَ|ذهب","كَتَبَ|كتب","فَرِحَ|فرح","سَمِعَ|سمع","عَمِلَ|عمل","حَسُنَ|حسن","خَشَعَ|خشع","جَعَلَ|جعل","حَمِدَ|حمد","رُزِقَ|رزق"];
+document.getElementById('wordsBox').innerHTML=WORDS.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}')">${a}<small>${b} 🔊</small></span>`}).join('');
+const TANWEEN=["كِتَابًا|كتابا","قَلَمًا|قلما","رَحْمَةً|رحمة","كِتَابٌ|كتابٌ","مُسْلِمٌ|مسلم","نُورٌ|نور","كِتَابٍ|كتاب","يَوْمٍ|يوم","غَفُورٍ|غفور"];
+document.getElementById('tanweenBox').innerHTML=TANWEEN.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}')">${a}<small>🔊</small></span>`}).join('');
+const SUKUN=["يَكْتُبُ|يكتب","يَسْمَعُ|يسمع","مُسْلِمٌ|مسلم","يَفْعَلُ|يفعل","نَصْرٌ|نصر","فَجْرٌ|فجر"];
+document.getElementById('sukunBox').innerHTML=SUKUN.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}')">${a}<small>${b}</small></span>`}).join('');
+const QAL=["يَقْطَعُ|يقطع","يَطْمَعُ|يطمع","يَبْخَلُ|يبخل","يَجْعَلُ|يجعل","يَدْخُلُ|يدخل","الصَّبْرُ|الصبر"];
+document.getElementById('qalqalahBox').innerHTML=QAL.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}')">${a}<small>${b}</small></span>`}).join('');
+const SH=["مَرَّ|مرّ","عَلَّمَ|علّم","رَبَّ|ربّ","كَبَّرَ|كبّر","طَهَّرَ|طهّر","الشَّمْسُ|الشمس"];
+document.getElementById('shaddaBox').innerHTML=SH.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}')">${a}<small>${b}</small></span>`}).join('');
+const GH=["إِنَّ|إنّ","ثُمَّ|ثمّ","جَنَّة|جنة","مُحَمَّد|محمد","النَّاس|الناس","أُمَّة|أمة"];
+document.getElementById('ghunnaBox').innerHTML=GH.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}');speak('${b}')">${a}<small>غنّة حركتين 🔊</small></span>`}).join('');
+const MD=["قَالَ|قال","كَانَ|كان","يَقُولُ|يقول","نُور|نور","قِيلَ|قيل","كَرِيم|كريم","مُوسَى|موسى","عِيسَى|عيسى"];
+document.getElementById('maddBox').innerHTML=MD.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}')">${a}<small>${b}</small></span>`}).join('');
+
+const HAR={
+fatha:{t:"الفَتْحَة: شرطة صغيرة فوق الحرف، تُنطق بفتح الفم: بَ تَ ثَ.",ex:["بَ|با","تَ|تا","ثَ|ثا","جَ|جا","حَ|حا","خَ|خا","دَ|دا","سَ|سا","شَ|شا","قَ|قا","كَ|كا","مَ|ما"]},
+damma:{t:"الضَّمَّة: واو صغيرة فوق الحرف، تُنطق بضم الشفتين: بُ تُ ثُ.",ex:["بُ|بو","تُ|تو","ثُ|ثو","جُ|جو","حُ|حو","عُ|عو","قُ|قو","مُ|مو","نُ|نو","يُ|يو"]},
+kasra:{t:"الكَسْرَة: شرطة صغيرة تحت الحرف، تُنطق بخفض الفك: بِ تِ ثِ.",ex:["بِ|بي","تِ|تي","ثِ|ثي","جِ|جي","حِ|حي","سِ|سي","شِ|شي","صِ|صي","قِ|قي","مِ|مي"]}};
+function showHarakah(k,btn){document.querySelectorAll('#harakat .tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.getElementById('harakahRule').textContent=HAR[k].t;document.getElementById('harakahBox').innerHTML=HAR[k].ex.map(w=>{const[a,b]=w.split('|');return `<span class="ex" onclick="speak('${b}')">${a}<small>${b}</small></span>`}).join('')}
+showHarakah('fatha',document.querySelector('#harakat .tab'));
+
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='ar-SA';u.rate=.75;speechSynthesis.speak(u)}catch(e){}}
+// search
+document.getElementById('search').addEventListener('input',e=>{
+const q=e.target.value.trim();
+document.querySelectorAll('.lcard').forEach(c=>c.style.display=(!q||c.dataset.name.includes(q))?'':'none');
+document.querySelectorAll('section[id]').forEach(s=>{if(!q)return s.style.display='';const txt=s.innerText;const hit=txt.includes(q);if(['letters'].includes(s.id))return;});
+// scroll to first match
+if(q.length>1){const cards=[...document.querySelectorAll('.lcard')].filter(c=>c.style.display!=='none');}
+});
+// font size
+let fs=100;
+function changeFont(d){fs=Math.min(140,Math.max(85,fs+d*5));document.body.style.fontSize=(fs/100*16)+'px';}
+function toggleTashkil(){const b=document.getElementById('tashkilBtn');const on=b.classList.toggle('on');b.textContent=on?'إظهار التشكيل':'إخفاء التشكيل';}
+let fBig=false;
+function toggleFatihaSize(){fBig=!fBig;document.getElementById('fatihaText').style.fontSize=fBig?'46px':'';}
+// progress
+const LESSONS=[["حروف الهجاء",9],["الحركات",10],["الكلمات بالحركات",25],["التنوين",27],["الكلمات بالحركات والتنوين",28],["السكون",30],["السكون في الكلمات",30],["حروف القلقلة",31],["القلقلة في الكلمات",31],["الشدة",32],["الشدة في الكلمات",32],["النون والميم المشددتان",33],["حروف المد",34],["المد في الكلمات",35],["علامة المد",36],["حروف أوائل السور",37],["مراجعة: من السكون إلى أوائل السور","—"],["النون والميم الساكنتان بغير غنة",38],["النون والميم الساكنتان بالغنة",39],["التنوين المركب",40],["التنوين المتتابع",40],["الميم الصغيرة (الإقلاب)",41],["الإدغام في (ي - و)",42],["الإدغام في (ل - ر)",43],["سورة الفاتحة",45]];
+let done=JSON.parse(localStorage.getItem('tahjiya_done')||'[]');
+function renderTrack(){
+const box=document.getElementById('trackList');
+box.innerHTML=LESSONS.map((l,i)=>`<label class="check ${done.includes(i)?'done':''}"><input type="checkbox" ${done.includes(i)?'checked':''} onchange="toggleLesson(${i})"><span><strong>${i+1}. ${l[0]}</strong></span><span class="pg">ص ${l[1]}</span></label>`).join('');
+const p=Math.round(done.length/LESSONS.length*100);
+document.getElementById('progressBar').style.width=p+'%';
+document.getElementById('progressText').textContent=`التقدم: ${done.length} من ${LESSONS.length} درساً (${p}%)`;
+}
+function toggleLesson(i){done=done.includes(i)?done.filter(x=>x!==i):[...done,i];localStorage.setItem('tahjiya_done',JSON.stringify(done));renderTrack();}
+function resetProgress(){done=[];localStorage.removeItem('tahjiya_done');renderTrack();}
+renderTrack();
+// header + reveal + readbar + nav
+const header=document.getElementById('header');
+addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>30);
+const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;document.getElementById('readbar').style.width=p+'%';});
+const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+burger.onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>{links.classList.remove('open');links.querySelectorAll('a').forEach(x=>x.classList.remove('active'));a.classList.add('active')});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
